@@ -14,7 +14,7 @@ $$
 if for every number $\epsilon>0$, there exists a corresponding number $\delta>0$ such that for all $(x,y)$ in the domain of $f$, $$
 0<\sqrt{ (x-x_{0})^{2}+(y-y_{0})^{2} }<\delta\implies \left| f(x,y)-L \right| <\epsilon
 $$
-## For a Single Varaible
+## For a Single Variable
 
 it can be shown that $$
 \begin{align}
