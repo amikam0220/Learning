@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"f6cc2d6cbe83511f","type":"group","x":-162,"y":-152,"width":212,"height":178,"label":"Body"},
+		{"id":"805888bab8c28b2f","type":"text","text":" [[Homework 7, Week 8#^18bbc5|Paragraph 2]]","x":-142,"y":-132,"width":172,"height":58},
+		{"id":"61766990b308a252","type":"text","text":" [[Homework 7, Week 8#^e8212d|Paragraph 3]]","x":-142,"y":-52,"width":172,"height":58},
+		{"id":"3bec02130b203bfd","type":"text","text":" [[Homework 7, Week 8#^abeb0c|Paragraph 1]]","x":-142,"y":-284,"width":172,"height":58},
+		{"id":"5deb2911f7d0dc74","type":"text","text":"### Introduction","x":-362,"y":-285,"width":191,"height":59},
+		{"id":"eccd54051243b1ff","type":"text","text":"### Body","x":-362,"y":-93,"width":191,"height":59},
+		{"id":"0b4fca92c9da3129","type":"text","text":"### Introduce the topic that there exist two Americas and contrast their differences.","x":118,"y":-375,"width":310,"height":181},
+		{"id":"f9ec64c1622469a9","type":"text","text":" [[Homework 7, Week 8#^72eb0d|Paragraph 4]]","x":-117,"y":126,"width":172,"height":58},
+		{"id":"e50853f5d1f2f94c","type":"text","text":"### Conclusion","x":-362,"y":96,"width":191,"height":59},
+		{"id":"ef3a8eb55d6449d1","type":"text","text":"### Outlook the possible future of two Americas respectively.","x":209,"y":97,"width":250,"height":203},
+		{"id":"3029504b937c272b","type":"text","text":"### Contrast in detail the differences between two Americas about the image and the spirit.","x":205,"y":-165,"width":358,"height":191},
+		{"id":"66cdf5480f1a51d8","type":"text","text":"## [[Homework 7, Week 8#The Two Americas|Text]]","x":-562,"y":-103,"width":133,"height":80}
+	],
+	"edges":[
+		{"id":"7ec1b988ae6c10ec","fromNode":"f6cc2d6cbe83511f","fromSide":"right","toNode":"3029504b937c272b","toSide":"left"},
+		{"id":"98580c64f87d158a","fromNode":"eccd54051243b1ff","fromSide":"right","toNode":"f6cc2d6cbe83511f","toSide":"left"},
+		{"id":"1d40c4dde618a417","fromNode":"805888bab8c28b2f","fromSide":"bottom","toNode":"61766990b308a252","toSide":"top"},
+		{"id":"fc316a1d70ad5746","fromNode":"3bec02130b203bfd","fromSide":"right","toNode":"0b4fca92c9da3129","toSide":"left"},
+		{"id":"10a6e33c0b25890a","fromNode":"5deb2911f7d0dc74","fromSide":"right","toNode":"3bec02130b203bfd","toSide":"left"},
+		{"id":"43315203c8bf07f4","fromNode":"66cdf5480f1a51d8","fromSide":"top","toNode":"5deb2911f7d0dc74","toSide":"left"},
+		{"id":"3b9da999fe687115","fromNode":"66cdf5480f1a51d8","fromSide":"right","toNode":"eccd54051243b1ff","toSide":"left"},
+		{"id":"2087890bea789a6a","fromNode":"f9ec64c1622469a9","fromSide":"right","toNode":"ef3a8eb55d6449d1","toSide":"left"},
+		{"id":"5cbb4fc5a5a8b444","fromNode":"e50853f5d1f2f94c","fromSide":"right","toNode":"f9ec64c1622469a9","toSide":"left"},
+		{"id":"9f3b9bf1c33f44c3","fromNode":"66cdf5480f1a51d8","fromSide":"bottom","toNode":"e50853f5d1f2f94c","toSide":"left"}
+	]
+}
