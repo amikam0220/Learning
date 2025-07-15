@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"d9cc790916c35995","type":"group","x":-145,"y":-132,"width":212,"height":178,"label":"Body"},
+		{"id":"21d9e75d68fdbccb","type":"text","text":" [[Homework 7, Week 8#^b40471|Paragraph 2]]","x":-125,"y":-112,"width":172,"height":58},
+		{"id":"c5874730805ad4b6","type":"text","text":" [[Homework 7, Week 8#^4ac165|Paragraph 7]]","x":-125,"y":-32,"width":172,"height":58},
+		{"id":"7593d4013e132b13","type":"text","text":" [[Homework 7, Week 8#^44f13c|Paragraph 1]]","x":-125,"y":-264,"width":172,"height":58},
+		{"id":"40536207d0f949bc","type":"text","text":"### Introduction","x":-345,"y":-265,"width":191,"height":59},
+		{"id":"fe96fba8a3db9ddf","type":"text","text":"### Body","x":-345,"y":-73,"width":191,"height":59},
+		{"id":"291679776d8a1970","type":"text","text":"### Contrast the differences between men and women in physical structure of brain, methods of interacting and the characters to problem-solving","x":222,"y":-145,"width":358,"height":225},
+		{"id":"9bdf2ceda6cb0d2e","type":"text","text":"### Introduce the topic that there exist dozens of differences of many aspects between men and women","x":135,"y":-355,"width":310,"height":181},
+		{"id":"85ed2c40d17bfe68","type":"text","text":"### Calling for rightly confronting the differences between male and female","x":226,"y":117,"width":250,"height":239},
+		{"id":"1090f8fd4020beef","type":"text","text":" [[Homework 7, Week 8#^eb0276|Paragraph 8]]","x":-100,"y":146,"width":172,"height":58},
+		{"id":"0ebdc7c1d6e31473","type":"text","text":"### Conclusion","x":-345,"y":116,"width":191,"height":59},
+		{"id":"1b8b38107122044d","type":"text","text":"## [[Homework 7, Week 8#Text A|Text A]]","x":-545,"y":-83,"width":133,"height":80}
+	],
+	"edges":[
+		{"id":"40c7ccc5c710b154","fromNode":"d9cc790916c35995","fromSide":"right","toNode":"291679776d8a1970","toSide":"left"},
+		{"id":"3d658166c4a8d8bc","fromNode":"fe96fba8a3db9ddf","fromSide":"right","toNode":"d9cc790916c35995","toSide":"left"},
+		{"id":"2f0093b48541fa8d","fromNode":"21d9e75d68fdbccb","fromSide":"bottom","toNode":"c5874730805ad4b6","toSide":"top"},
+		{"id":"00fba225b034b7aa","fromNode":"7593d4013e132b13","fromSide":"right","toNode":"9bdf2ceda6cb0d2e","toSide":"left"},
+		{"id":"cc9cdbc800526eca","fromNode":"40536207d0f949bc","fromSide":"right","toNode":"7593d4013e132b13","toSide":"left"},
+		{"id":"51d00253f628587d","fromNode":"1b8b38107122044d","fromSide":"top","toNode":"40536207d0f949bc","toSide":"left"},
+		{"id":"70e2d8a2fc829082","fromNode":"0ebdc7c1d6e31473","fromSide":"right","toNode":"1090f8fd4020beef","toSide":"left"},
+		{"id":"acc55d5df0a671a4","fromNode":"1b8b38107122044d","fromSide":"bottom","toNode":"0ebdc7c1d6e31473","toSide":"left"},
+		{"id":"16ade3f4b3247ffe","fromNode":"1b8b38107122044d","fromSide":"right","toNode":"fe96fba8a3db9ddf","toSide":"left"},
+		{"id":"0ed0e66105f93518","fromNode":"1090f8fd4020beef","fromSide":"right","toNode":"85ed2c40d17bfe68","toSide":"left"}
+	]
+}
