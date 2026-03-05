@@ -17,13 +17,13 @@ Responsible for handling all ==numerical operations in a computers==.
 
 The circuit adds ==two binary digits==. So it uses two numbers as input and one result of two bits for output.
 The operation of this calculation has the same result with ==XOR== gate except for ==two 1 as inputs== since the 1 need to be carried to the next column. So it need another wire to represent the ==carry bit==, which can be performed by ==AND== gate.
-![[Half Adder.png]]
+![[Computer_Learning/Crash Course Computer Science/Figures of P05/Half Adder.png]]
 
 ### Full Adder
 
 The other addition operations need to add ==three bits==, two input and one carry from the former column. So the full adder are used to achieve the operation, three numbers as input and one result of two bits for output.
 First add two numbers and get a sum and a carry, then add this sum and another number to get the final sum and another carry. If one of the carry is true, then the final carry is true.  
-![[Full Adder.png]]
+![[Computer_Learning/Crash Course Computer Science/Figures of P05/Full Adder.png]]
 
 ### 8-Bit Adder
 
