@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"c47134da47114862","x":-145,"y":-375,"width":212,"height":188,"type":"group","label":"Introduction"},
+		{"id":"557176db486fc1bb","type":"group","x":-145,"y":68,"width":212,"height":185,"label":"Conclusion"},
+		{"id":"8a25c597c03be1fa","type":"group","x":-145,"y":-132,"width":212,"height":178,"label":"Body"},
+		{"id":"86a45c1e9ec23d1e","type":"text","text":" [[Homework 5th, Week 6th#^402f7f|Paragraph 3]]","x":-125,"y":-112,"width":172,"height":58},
+		{"id":"72ddcd1811bbe569","type":"text","text":" [[Homework 5th, Week 6th#^688210|Paragraph 9]]","x":-125,"y":-32,"width":172,"height":58},
+		{"id":"2aa17ca57f853bde","type":"text","text":" [[Homework 5th, Week 6th#^646f82|Paragraph 10]]","x":-125,"y":88,"width":172,"height":58},
+		{"id":"2a94a0bb21d0543e","type":"text","text":"### Introduction","x":-345,"y":-265,"width":191,"height":59},
+		{"id":"27607ff9c87f1b11","type":"text","text":"### Conclusion","x":-345,"y":116,"width":191,"height":59},
+		{"id":"752328bfc5e4358e","type":"text","text":" [[Homework 5th, Week 6th#^71ad7d|Paragraph 11]]","x":-125,"y":175,"width":172,"height":58},
+		{"id":"f5aa0e3847e3d524","type":"text","text":"### Further show the difference of social distance of different regions and countries","x":226,"y":117,"width":254,"height":203},
+		{"id":"33faaecebc5162e8","type":"text","text":"### Body","x":-345,"y":-73,"width":191,"height":59},
+		{"id":"22464a2867750c4b","type":"text","text":"## [[Homework 5th, Week 6th#Text B|Text B]]","x":-545,"y":-83,"width":160,"height":80},
+		{"id":"a784baa33fa8d3d5","type":"text","text":"### Explain in details about the rules of social distance in different zones","x":222,"y":-145,"width":298,"height":171},
+		{"id":"4165727c7e20b461","type":"text","text":"### Specify the concept of social distance and grabber readers into the topic","x":135,"y":-355,"width":310,"height":181},
+		{"id":"c1b0377554e5e209","type":"text","text":" [[Homework 5th, Week 6th#^324daa|Paragraph 1]]","x":-125,"y":-355,"width":172,"height":58},
+		{"id":"7d5461634ff5310f","type":"text","text":" [[Homework 5th, Week 6th#^e9e36b|Paragraph 2]]","x":-125,"y":-265,"width":172,"height":58}
+	],
+	"edges":[
+		{"id":"aea508b3063d9b1e","fromNode":"557176db486fc1bb","fromSide":"right","toNode":"f5aa0e3847e3d524","toSide":"left"},
+		{"id":"77845ed5da2b0d30","fromNode":"27607ff9c87f1b11","fromSide":"right","toNode":"557176db486fc1bb","toSide":"left"},
+		{"id":"5b6010f0a5ec9eb4","fromNode":"8a25c597c03be1fa","fromSide":"right","toNode":"a784baa33fa8d3d5","toSide":"left"},
+		{"id":"3f966bdeb0a3d8fd","fromNode":"33faaecebc5162e8","fromSide":"right","toNode":"8a25c597c03be1fa","toSide":"left"},
+		{"id":"35fa0a9567f48896","fromNode":"86a45c1e9ec23d1e","fromSide":"bottom","toNode":"72ddcd1811bbe569","toSide":"top"},
+		{"id":"0b16a70e7846cc52","fromNode":"2aa17ca57f853bde","fromSide":"bottom","toNode":"752328bfc5e4358e","toSide":"top"},
+		{"id":"5f3d14f1d4069688","fromNode":"22464a2867750c4b","fromSide":"right","toNode":"33faaecebc5162e8","toSide":"left"},
+		{"id":"866edb985ae4acd8","fromNode":"22464a2867750c4b","fromSide":"top","toNode":"2a94a0bb21d0543e","toSide":"left"},
+		{"id":"e853a9c5c94ebd03","fromNode":"22464a2867750c4b","fromSide":"bottom","toNode":"27607ff9c87f1b11","toSide":"left"},
+		{"id":"883e30bf643060a8","fromNode":"c47134da47114862","fromSide":"right","toNode":"4165727c7e20b461","toSide":"left"},
+		{"id":"12177bb7d4931527","fromNode":"2a94a0bb21d0543e","fromSide":"right","toNode":"c47134da47114862","toSide":"left"}
+	]
+}

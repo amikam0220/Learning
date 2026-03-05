@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"16e060f91a19f4fb","type":"group","x":-145,"y":-132,"width":212,"height":178,"label":"Body"},
+		{"id":"051a33cdb3232a69","type":"text","text":" [[Homework 6, Week 7#^8a3cce|Paragraph 2]]","x":-125,"y":-112,"width":172,"height":58},
+		{"id":"c8126ff7facd28f5","type":"text","text":" [[Homework 6, Week 7#^2166ca|Paragraph 8]]","x":-125,"y":-32,"width":172,"height":58},
+		{"id":"abd31582a07799cb","type":"text","text":" [[Homework 6, Week 7#^d6b21c|Paragraph 1]]","x":-125,"y":-264,"width":172,"height":58},
+		{"id":"882f88c4c2016f83","type":"text","text":"### Introduction","x":-345,"y":-265,"width":191,"height":59},
+		{"id":"72672179cd61ce35","type":"text","text":"### Conclusion","x":-345,"y":116,"width":191,"height":59},
+		{"id":"ad5df6caae65e4f1","type":"text","text":"### State the rapid development of technology make the environment more polluted nowadays and show the status","x":226,"y":117,"width":250,"height":239},
+		{"id":"c10418fd5c00fcda","type":"text","text":"### Body","x":-345,"y":-73,"width":191,"height":59},
+		{"id":"e0b14051755ccd93","type":"text","text":"### By the time order to show the destruction of Americans from the era of colony to the natural park","x":222,"y":-145,"width":323,"height":213},
+		{"id":"9a89dcab057ccc5f","type":"text","text":"### Introduce the topic that Americans always destroy the land like the enemy","x":135,"y":-355,"width":310,"height":181},
+		{"id":"86170b4aa42419d9","type":"text","text":"## [[Homework 6, Week 7#Text A|Text A]]","x":-545,"y":-83,"width":160,"height":80},
+		{"id":"0876133291211b86","type":"text","text":" [[Homework 6, Week 7#^c31b2d|Paragraph 9]]","x":-100,"y":146,"width":172,"height":58}
+	],
+	"edges":[
+		{"id":"506857116e9410c5","fromNode":"16e060f91a19f4fb","fromSide":"right","toNode":"e0b14051755ccd93","toSide":"left"},
+		{"id":"14f7267f1182bb94","fromNode":"c10418fd5c00fcda","fromSide":"right","toNode":"16e060f91a19f4fb","toSide":"left"},
+		{"id":"ce0d152b738e8da8","fromNode":"051a33cdb3232a69","fromSide":"bottom","toNode":"c8126ff7facd28f5","toSide":"top"},
+		{"id":"333b41d1c1fb2837","fromNode":"abd31582a07799cb","fromSide":"right","toNode":"9a89dcab057ccc5f","toSide":"left"},
+		{"id":"2f0bd1598172f6d8","fromNode":"882f88c4c2016f83","fromSide":"right","toNode":"abd31582a07799cb","toSide":"left"},
+		{"id":"1609a0222b00e1b2","fromNode":"86170b4aa42419d9","fromSide":"right","toNode":"c10418fd5c00fcda","toSide":"left"},
+		{"id":"85a9dee28f6a2a94","fromNode":"86170b4aa42419d9","fromSide":"top","toNode":"882f88c4c2016f83","toSide":"left"},
+		{"id":"47d52ad946ad8420","fromNode":"86170b4aa42419d9","fromSide":"bottom","toNode":"72672179cd61ce35","toSide":"left"},
+		{"id":"5d71bf9e578e2ddc","fromNode":"72672179cd61ce35","fromSide":"right","toNode":"0876133291211b86","toSide":"left"},
+		{"id":"36e321fa4418e1bb","fromNode":"0876133291211b86","fromSide":"right","toNode":"ad5df6caae65e4f1","toSide":"left"}
+	]
+}

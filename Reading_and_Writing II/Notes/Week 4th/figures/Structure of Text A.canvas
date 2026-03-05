@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"7a9d6f383f7fbff2","type":"group","x":-110,"y":53,"width":212,"height":185,"label":"Conclusion"},
+		{"id":"25b5773124e2f8ec","type":"group","x":-110,"y":-147,"width":212,"height":178,"label":"Body"},
+		{"id":"b7682c6a95b1fa86","type":"text","text":"[[Homework 3, Week 4#^cd9316|Paragraph 1]]","x":-90,"y":-127,"width":172,"height":58},
+		{"id":"d1422e3eadec88cd","type":"text","text":"[[Homework 3, Week 4#^b0282f|Paragraph 13]]","x":-90,"y":-47,"width":172,"height":58},
+		{"id":"7a6db14041f83470","type":"text","text":"[[Homework 3, Week 4#^cd9316|Paragraph 1]]","x":-90,"y":-279,"width":172,"height":58},
+		{"id":"0591053bd8de3528","type":"text","text":"### Introduce the topic about the writing and drafts","x":170,"y":-341,"width":173,"height":181},
+		{"id":"19ef50f26aed8d8a","type":"text","text":"[[Homework 3, Week 4#^c1fa43|Paragraph 14]]","x":-90,"y":73,"width":172,"height":58},
+		{"id":"445f7842cd62fccd","type":"text","text":"[[Homework 3, Week 4#^ef3d3a|Paragraph 15]]","x":-90,"y":160,"width":172,"height":58},
+		{"id":"787a3b8f100401f1","type":"text","text":"### Emphasize some significant incidents besides the writing process itself","x":261,"y":102,"width":250,"height":239},
+		{"id":"4b8988761e5fa5b5","type":"text","text":"### Body","x":-310,"y":-88,"width":191,"height":59},
+		{"id":"c82fc945244e1532","type":"text","text":"## [[Homework 3, Week 4#Text A|Text A]]","x":-510,"y":-98,"width":160,"height":80},
+		{"id":"00716174d7d46c30","type":"text","text":"### Introduction","x":-310,"y":-280,"width":191,"height":59},
+		{"id":"137afb6207d7594b","type":"text","text":"### Conclusion","x":-310,"y":101,"width":191,"height":59},
+		{"id":"9c6333ca05937eca","type":"text","text":"### Explain by details about the writing process","x":261,"y":-127,"width":250,"height":146}
+	],
+	"edges":[
+		{"id":"40cdad1ab91d738d","fromNode":"7a9d6f383f7fbff2","fromSide":"right","toNode":"787a3b8f100401f1","toSide":"left"},
+		{"id":"78505a1c598a06da","fromNode":"137afb6207d7594b","fromSide":"right","toNode":"7a9d6f383f7fbff2","toSide":"left"},
+		{"id":"1995d5579940605d","fromNode":"25b5773124e2f8ec","fromSide":"right","toNode":"9c6333ca05937eca","toSide":"left"},
+		{"id":"25c783c61601db04","fromNode":"4b8988761e5fa5b5","fromSide":"right","toNode":"25b5773124e2f8ec","toSide":"left"},
+		{"id":"dc56aec198dff825","fromNode":"c82fc945244e1532","fromSide":"right","toNode":"4b8988761e5fa5b5","toSide":"left"},
+		{"id":"644e06792a10757b","fromNode":"c82fc945244e1532","fromSide":"top","toNode":"00716174d7d46c30","toSide":"left"},
+		{"id":"de11637a9bdff3a2","fromNode":"c82fc945244e1532","fromSide":"bottom","toNode":"137afb6207d7594b","toSide":"left"},
+		{"id":"594a2607944a9ba6","fromNode":"b7682c6a95b1fa86","fromSide":"bottom","toNode":"d1422e3eadec88cd","toSide":"top"},
+		{"id":"0a8acdc890db01bd","fromNode":"00716174d7d46c30","fromSide":"right","toNode":"7a6db14041f83470","toSide":"left"},
+		{"id":"178ea4666cf4126c","fromNode":"7a6db14041f83470","fromSide":"right","toNode":"0591053bd8de3528","toSide":"left"},
+		{"id":"693beade5fd79d13","fromNode":"19ef50f26aed8d8a","fromSide":"bottom","toNode":"445f7842cd62fccd","toSide":"top"}
+	]
+}

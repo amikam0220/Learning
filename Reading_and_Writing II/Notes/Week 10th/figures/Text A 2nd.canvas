@@ -1,0 +1,30 @@
+{
+	"nodes":[
+		{"id":"5e670224f23f6230","type":"group","x":-132,"y":-347,"width":212,"height":188,"label":"Introduction"},
+		{"id":"0e26f19837e5cf04","type":"group","x":-132,"y":-104,"width":212,"height":178,"label":"Body"},
+		{"id":"01a701eade8aab39","type":"text","text":"### Conclusion","x":-332,"y":144,"width":191,"height":59},
+		{"id":"899561cc826c4a9a","type":"text","text":"### Return to the Asian family and think of their future to lead readers to think","x":239,"y":145,"width":254,"height":203},
+		{"id":"d897ec326aacf58e","type":"text","text":" [[Homework 8, Week 10#^97b206|Paragraph 5]]","x":-112,"y":-84,"width":172,"height":58},
+		{"id":"f2908ab1159f3d87","type":"text","text":" [[Homework 8, Week 10#^fa0331|Paragraph 12]]","x":-112,"y":-4,"width":172,"height":58},
+		{"id":"a2f78183f4f4ca9c","type":"text","text":"### Explain the negative effects of cultural globalization in detail","x":235,"y":-117,"width":298,"height":171},
+		{"id":"52d6e4900ae4a8e7","type":"text","text":"### Use the Asian family as a example to introduce the topic of cultural globalization","x":148,"y":-327,"width":310,"height":181},
+		{"id":"605f72fa019beba0","type":"text","text":" [[Homework 8, Week 10#^5db2c3|Paragraph 1]]","x":-112,"y":-327,"width":172,"height":58},
+		{"id":"749e8883937cbdbc","type":"text","text":" [[Homework 8, Week 10#^7447d7|Paragraph 4]]","x":-112,"y":-237,"width":172,"height":58},
+		{"id":"d892aae749941e1a","type":"text","text":"### Introduction","x":-332,"y":-237,"width":191,"height":59},
+		{"id":"cfedd9b1fd65e248","type":"text","text":"### Body","x":-332,"y":-45,"width":191,"height":59},
+		{"id":"3be404f79b162cf8","type":"text","text":"## [[Homework 8, Week 10#Text A|Text]]","x":-532,"y":-55,"width":160,"height":80},
+		{"id":"59a0a9a9ca8fdb1c","type":"text","text":" [[Homework 8, Week 10#^b6fa8c|Paragraph 13]]","x":-112,"y":189,"width":172,"height":58}
+	],
+	"edges":[
+		{"id":"b2271cca307aa45f","fromNode":"5e670224f23f6230","fromSide":"right","toNode":"52d6e4900ae4a8e7","toSide":"left"},
+		{"id":"64c832f2acefd346","fromNode":"d892aae749941e1a","fromSide":"right","toNode":"5e670224f23f6230","toSide":"left"},
+		{"id":"57e7fffa30d24810","fromNode":"0e26f19837e5cf04","fromSide":"right","toNode":"a2f78183f4f4ca9c","toSide":"left"},
+		{"id":"0d9d105fbac71cdd","fromNode":"cfedd9b1fd65e248","fromSide":"right","toNode":"0e26f19837e5cf04","toSide":"left"},
+		{"id":"4e4232fc4a945cac","fromNode":"3be404f79b162cf8","fromSide":"top","toNode":"d892aae749941e1a","toSide":"left"},
+		{"id":"3d25f41ec286919f","fromNode":"3be404f79b162cf8","fromSide":"bottom","toNode":"01a701eade8aab39","toSide":"left"},
+		{"id":"abfa525e24d211f4","fromNode":"3be404f79b162cf8","fromSide":"right","toNode":"cfedd9b1fd65e248","toSide":"left"},
+		{"id":"25543ea64f00ae91","fromNode":"d897ec326aacf58e","fromSide":"bottom","toNode":"f2908ab1159f3d87","toSide":"top"},
+		{"id":"5f3202aa7f43c73c","fromNode":"01a701eade8aab39","fromSide":"right","toNode":"59a0a9a9ca8fdb1c","toSide":"left"},
+		{"id":"7864a99b4d9fcc76","fromNode":"59a0a9a9ca8fdb1c","fromSide":"right","toNode":"899561cc826c4a9a","toSide":"left"}
+	]
+}

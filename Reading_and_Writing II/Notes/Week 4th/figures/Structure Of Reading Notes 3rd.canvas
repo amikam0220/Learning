@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"75de838f16a95b66","type":"group","x":54,"y":-164,"width":226,"height":189,"label":"Body"},
+		{"id":"69e46be87734e4c1","type":"text","text":"### Introduction","x":-200,"y":-242,"width":220,"height":52},
+		{"id":"868def6b1c57dd5a","type":"text","text":"### Body","x":-160,"y":-95,"width":180,"height":50},
+		{"id":"fbb932a3eda9cad5","type":"text","text":"### Conclusion","x":-160,"y":40,"width":180,"height":50},
+		{"id":"8e4b4a242f187ceb","type":"text","text":"### [[Reading Notes 3rd, Week 4]]","x":-400,"y":-144,"width":165,"height":149},
+		{"id":"5e6856bd7b395e5a","type":"text","text":"[[Reading Notes 3rd, Week 4#^d5412f|Paragraph 1]]","x":74,"y":-245,"width":186,"height":55},
+		{"id":"ec9f5f50ddd63cb0","type":"text","text":"### Introduce the main character and her contribution and prominence","x":319,"y":-340,"width":250,"height":196},
+		{"id":"34ae580b3568eaf6","type":"text","text":"[[Reading Notes 3rd, Week 4#^fa3b70|Paragraph 2]]","x":74,"y":-144,"width":186,"height":55},
+		{"id":"16933e52966983e8","type":"text","text":"[[Reading Notes 3rd, Week 4#^24b38c|Paragraph 10]]","x":74,"y":35,"width":186,"height":55},
+		{"id":"b5c24e413ad7a423","type":"text","text":"[[Reading Notes 3rd, Week 4#^8a6c77|Paragraph 9]]","x":74,"y":-50,"width":186,"height":55},
+		{"id":"286540e9dfe6ad7a","type":"text","text":"### Show the complicated situation in Pakistan, her endeavor for human rights there and her fame abroad and at home","x":360,"y":-127,"width":300,"height":217},
+		{"id":"65c173628f0e5057","type":"text","text":"### Her family's opposition for the illegal arrest of the authority","x":382,"y":140,"width":250,"height":180}
+	],
+	"edges":[
+		{"id":"d96ded5f0f973c03","fromNode":"8e4b4a242f187ceb","fromSide":"top","toNode":"69e46be87734e4c1","toSide":"left"},
+		{"id":"60496415ada88afb","fromNode":"8e4b4a242f187ceb","fromSide":"right","toNode":"868def6b1c57dd5a","toSide":"left"},
+		{"id":"aef369a73a52ea76","fromNode":"8e4b4a242f187ceb","fromSide":"bottom","toNode":"fbb932a3eda9cad5","toSide":"left"},
+		{"id":"762dcefbd8f379fc","fromNode":"69e46be87734e4c1","fromSide":"right","toNode":"5e6856bd7b395e5a","toSide":"left"},
+		{"id":"36e341babf91014b","fromNode":"5e6856bd7b395e5a","fromSide":"right","toNode":"ec9f5f50ddd63cb0","toSide":"left"},
+		{"id":"dc381b227d5b4b17","fromNode":"34ae580b3568eaf6","fromSide":"bottom","toNode":"b5c24e413ad7a423","toSide":"top"},
+		{"id":"823608d98c052f73","fromNode":"868def6b1c57dd5a","fromSide":"right","toNode":"75de838f16a95b66","toSide":"left"},
+		{"id":"8b5fb7e0782dff34","fromNode":"fbb932a3eda9cad5","fromSide":"right","toNode":"16933e52966983e8","toSide":"left"},
+		{"id":"cfd88863b04d848b","fromNode":"75de838f16a95b66","fromSide":"right","toNode":"286540e9dfe6ad7a","toSide":"left"},
+		{"id":"4f95e3ad3634ff24","fromNode":"16933e52966983e8","fromSide":"right","toNode":"65c173628f0e5057","toSide":"left"}
+	]
+}
