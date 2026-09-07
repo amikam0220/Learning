@@ -1,0 +1,9 @@
+- Attended lecture on Domain Analysis & Modeling (SE26S-06A), Software Architecture (SE26S-06B) Apr. 15, 14:00 – 16:30
+- Reviewed lecture notes: domain concepts, attributes, associations, contracts (preconditions & postconditions), Apr. 15, 20:00 – 21:00
+- Studied the transition from use cases to domain model (boundary concepts → internal concepts → responsibilities), Apr. 16, 20:30 – 21:30
+- Reviewed traceability matrix (requirements → use cases → domain model) and law of requisite variety, Apr. 17, 21:00 – 22:00
+- Read and summarized architecture definitions, key concerns, and architectural decisions, Apr. 18, 15:00 – 16:00
+- Studied architecture styles (REST, Client/Server, Layered, MVC, Pipe-and-Filter, Central Repository, Microservices), Apr. 18, 16:00 – 17:30
+- Reviewed problem structure vs. solution structure, and the 5-dimensional problem space (transformation, editing, commanded behavior, required behavior, information display), Apr. 19, 19:30 – 20:30
+- Compiled integrated notes on domain modeling and software architecture; reviewed connections between the two topics, Apr. 20, 21:00 – 22:00
+- Reviewed WarmUp Programming solutions (Dragon Curve, matrix DP) for self-assessment, Apr. 21, 20:00 – 21:00

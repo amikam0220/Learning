@@ -1,0 +1,8 @@
+- Reviewed and organized lecture notes on Problem Frames introduction: problem framing rationale, typical system requirements, and the 5-dimensional problem space, May 13, 20:00 – 21:00
+- Studied Basic Frame 1: Required Behavior (autonomous control) – frame structure, concern checklist, and Safe Home Access REQ1 example (lock auto-lock), May 14, 20:30 – 21:30
+- Studied Basic Frame 2: Commanded Behavior (manual/interactive control) – frame structure, concern checklist, and Safe Home Access REQ2–REQ4 examples (Lock/Unlock commands, dictionary attack prevention), May 15, 21:00 – 22:00
+- Studied Basic Frame 3: Information Display – frame structure, concern checklist, and Safe Home Access REQ8 (access history display) and REQ5 (log maintenance) examples, May 16, 15:00 – 16:00
+- Studied Basic Frame 4: Simple Editing – frame structure, concern checklist, and Safe Home Access REQ6 (adding/removing users) and REQ9 (filing inquiries) examples, May 16, 16:00 – 17:00
+- Studied Basic Frame 5: Transformation – frame structure, concern checklist, and Investment Fantasy League REQ4 (periodic report generation) example, May 17, 19:30 – 20:30
+- Reviewed Problem Frames II: notation syntax (C/B/X domains, causal/symbolic phenomena), shared phenomena, and recombination techniques; studied Personal Health Monitoring case decomposition, May 18, 21:00 – 22:00
+- Compiled integrated notes on all five problem frames and their application to Safe Home Access; prepared for project report decomposition using problem frame approach, May 19, 20:00 – 21:00

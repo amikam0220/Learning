@@ -1,0 +1,5 @@
+- Reviewed and organized lecture notes on Software Testing overview and key concepts (fault, test case, white-box vs. black-box testing), Apr. 29, 20:00 – 21:00
+- Studied equivalence testing and boundary testing heuristics (input space coverage), Apr. 30, 20:30 – 21:30
+- Reviewed security testing concepts (honeypots, access control matrix), May 3, 19:30 – 20:30
+- Read and summarized Ch1–3 of Reactive Systems (Wieringa): definitions, environment (subject/connection domain), stimulus-response behavior, assumptions about observers/actors, May 4, 21:00 – 22:00
+- Compiled integrated notes on software testing techniques and reactive systems fundamentals; reviewed connections to previous lectures, May 5, 20:00 – 21:00

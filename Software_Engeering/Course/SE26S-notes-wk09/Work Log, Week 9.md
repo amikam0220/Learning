@@ -1,0 +1,8 @@
+- Reviewed and organized lecture notes on Software Architecture definitions (noun/verb), architectural dimensions (logical, deployment), and UP architectural views, May 6, 20:00 – 21:00
+- Studied architectural patterns: Layers, Model-View Separation Principle, and 3-tier vs. 2-tier design, May 7, 20:30 – 21:30
+- Reviewed Package Diagrams and inter-layer coupling/interaction, May 8, 21:00 – 22:00
+- Studied Domain Layer vs. Domain Model distinction and Information Systems layered architecture (classic 3-tier), May 9, 15:00 – 16:00
+- Read and understood Project Assignment Notes: CCSS requirements, business logic (Alipay/WeChat/bank transfer), report structure (problem description, solution, user requirements, system specification, UI design, architecture), submission deadlines (first version May 26, second June 23), May 9, 16:00 – 17:00
+- Began project planning: discussed team composition (2–3 students) and considered case options (CCSS/Case G/Case H/Free project), May 10, 19:30 – 20:30
+- Compiled integrated notes on architecture design principles and project requirements; reviewed connections to previous design lectures (SOLID, responsibilities, layers), May 11, 21:00 – 22:00
+- Prepared initial outline for project report (problem context, stakeholders, high-level features) based on Appendix G reference, May 12, 20:00 – 21:00

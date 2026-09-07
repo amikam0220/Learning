@@ -1,0 +1,813 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Consolas, Courier New, Courier; font-size: 18pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+
+<p /> <p />
+   
+<div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;for&nbsp;Tool&nbsp;(of&nbsp;Player)</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff">&nbsp;</font><font color="#008000">*/</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#0000c0"><b>public&nbsp;enum&nbsp;</b></font><font color="#000000">Tool&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">X,&nbsp;O,&nbsp;EMPTY;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;name()</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">String&nbsp;toString&nbsp;</font><font color="#000000">()&nbsp;{&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">SHOW_AS</font><font color="#000000">[&nbsp;</font><font color="#000000">ordinal</font><font color="#000000">()&nbsp;]</font><font color="#000000">;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">SHOW_AS&nbsp;=&nbsp;</font><font color="#000000">{&nbsp;</font><font color="#990000">&#34;X&#34;</font><font color="#000000">,&nbsp;</font><font color="#990000">&#34;O&#34;</font><font color="#000000">,&nbsp;</font><font color="#990000">&#34;&nbsp;&#34;&nbsp;</font><font color="#000000">}</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#0000c0"><b>import&nbsp;</b></font><font color="#000000">java.util.Random;</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">RandomGenerator&nbsp;</font><font color="#0000c0"><b>extends&nbsp;</b></font><font color="#000000">Random&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#c00000"><b>long&nbsp;</b></font><font color="#000000">serialVersionUID&nbsp;=&nbsp;</font><font color="#990000">1L</font><font color="#000000">;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">nextIntBetween&nbsp;</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">low,&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">high</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">low&nbsp;+&nbsp;</font><font color="#0000c0"><b>super</b></font><font color="#000000">.nextInt</font><font color="#000000">(&nbsp;</font><font color="#000000">high&nbsp;-&nbsp;low&nbsp;+&nbsp;</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">nextBooleanBy&nbsp;</font><font color="#000000">(</font><font color="#c00000"><b>double&nbsp;</b></font><font color="#000000">probility</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;super</b></font><font color="#000000">.nextDouble</font><font color="#000000">()&nbsp;</font><font color="#000000">&lt;=&nbsp;probility;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;for&nbsp;Tic&nbsp;Tac&nbsp;Toe&nbsp;moves</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#008000">*/</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">Move&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">row;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">column;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Move&nbsp;</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r,&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">r&nbsp;&lt;&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">||&nbsp;Board.SIZE&nbsp;&lt;&nbsp;r&nbsp;||&nbsp;c&nbsp;&lt;&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">||&nbsp;Board.SIZE&nbsp;&lt;&nbsp;c</font><font color="#000000">)</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>throw&nbsp;new&nbsp;</b></font><font color="#000000">IllegalArgumentException</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">row&nbsp;=&nbsp;r;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">column&nbsp;=&nbsp;c;</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">16</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">getRow&nbsp;</font><font color="#000000">()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">row;&nbsp;</font><font color="#000000">}&nbsp;&nbsp;</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">getColumn&nbsp;</font><font color="#000000">()&nbsp;&nbsp;&nbsp;{&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">column;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">19</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">String&nbsp;toString</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">String.format</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;(%d,%d)&#34;</font><font color="#000000">,&nbsp;row,&nbsp;column</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">23</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">atCorner&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">(</font><font color="#000000">row&nbsp;==&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;column==</font><font color="#990000">1</font><font color="#000000">)&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#000000">(</font><font color="#000000">row&nbsp;==&nbsp;</font><font color="#990000">1&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;column==</font><font color="#990000">3</font><font color="#000000">)&nbsp;</font><font color="#000000">||&nbsp;</font><br />
+<font color="#808080">25</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">(</font><font color="#000000">row&nbsp;==&nbsp;</font><font color="#990000">3&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;column==</font><font color="#990000">1</font><font color="#000000">)&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#000000">(</font><font color="#000000">row&nbsp;==&nbsp;</font><font color="#990000">3&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;column==</font><font color="#990000">3</font><font color="#000000">)&nbsp;</font><font color="#000000">;</font><br />
+<font color="#808080">26</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">27</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">28</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">isCatercorner&nbsp;</font><font color="#000000">(</font><font color="#000000">Move&nbsp;move</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">29</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;this</b></font><font color="#000000">.atCorner</font><font color="#000000">()&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;move.atCorner</font><font color="#000000">()&nbsp;</font><font color="#000000">&amp;&amp;</font><br />
+<font color="#808080">30</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.row&nbsp;+&nbsp;move.row&nbsp;==&nbsp;</font><font color="#990000">4&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.column&nbsp;+&nbsp;move.column&nbsp;==&nbsp;</font><font color="#990000">4</font><font color="#000000">;</font><br />
+<font color="#808080">31</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">32</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">33</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">getCross&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">34</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">CROSS</font><font color="#000000">[</font><font color="#000000">row-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">column-</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">;</font><br />
+<font color="#808080">35</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">36</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#c00000"><b>int</b></font><font color="#000000">[][]&nbsp;</font><font color="#000000">CROSS&nbsp;=&nbsp;</font><font color="#000000">{&nbsp;</font><br />
+<font color="#808080">37</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><font color="#990000">3</font><font color="#000000">,&nbsp;</font><font color="#990000">2</font><font color="#000000">,&nbsp;</font><font color="#990000">3</font><font color="#000000">}</font><font color="#000000">,&nbsp;</font><br />
+<font color="#808080">38</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><font color="#990000">2</font><font color="#000000">,&nbsp;</font><font color="#990000">4</font><font color="#000000">,&nbsp;</font><font color="#990000">2</font><font color="#000000">}</font><font color="#000000">,&nbsp;</font><br />
+<font color="#808080">39</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">{</font><font color="#990000">3</font><font color="#000000">,&nbsp;</font><font color="#990000">2</font><font color="#000000">,&nbsp;</font><font color="#990000">3</font><font color="#000000">}&nbsp;</font><br />
+<font color="#808080">40</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><font color="#000000">;</font><br />
+<font color="#808080">41</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;Utility&nbsp;class&nbsp;for&nbsp;Tic&nbsp;Tac&nbsp;Toe&nbsp;moves</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#008000">*/</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#0000c0"><b>import&nbsp;</b></font><font color="#000000">java.util.ArrayList;</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">06</font>&nbsp;<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">Moves&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">RandomGenerator&nbsp;random&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">RandomGenerator</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;</b></font><font color="#000000">Move&nbsp;anyMoveFrom&nbsp;</font><font color="#000000">(</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;moves</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">moves.get</font><font color="#000000">(&nbsp;</font><font color="#000000">random.nextInt</font><font color="#000000">(&nbsp;</font><font color="#000000">moves.size</font><font color="#000000">()))</font><font color="#000000">;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;</b></font><font color="#000000">Move&nbsp;anyMoveFrom&nbsp;</font><font color="#000000">(</font><font color="#000000">Move</font><font color="#000000">[]&nbsp;</font><font color="#000000">moves</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">moves</font><font color="#000000">[&nbsp;</font><font color="#000000">random.nextInt</font><font color="#000000">(&nbsp;</font><font color="#000000">moves.length</font><font color="#000000">)]</font><font color="#000000">;</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">17</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;</b></font><font color="#000000">Move&nbsp;randomStartMove&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">random.nextBoolean</font><font color="#000000">()&nbsp;</font><font color="#000000">?&nbsp;</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">CORNERS</font><font color="#000000">)&nbsp;</font><font color="#000000">:</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">(</font><font color="#000000">random.nextBoolean</font><font color="#000000">()&nbsp;</font><font color="#000000">?&nbsp;anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">SIDES</font><font color="#000000">)&nbsp;</font><font color="#000000">:&nbsp;CENTER</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">Move&nbsp;CENTER&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">2</font><font color="#000000">,</font><font color="#990000">2</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">25</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">[]&nbsp;</font><font color="#000000">CORNERS&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">[]&nbsp;{</font><br />
+<font color="#808080">26</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">,</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">,&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">,</font><font color="#990000">3</font><font color="#000000">)</font><font color="#000000">,&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">3</font><font color="#000000">,</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">,&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">3</font><font color="#000000">,</font><font color="#990000">3</font><font color="#000000">)</font><br />
+<font color="#808080">27</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><font color="#000000">;&nbsp;</font><br />
+<font color="#808080">28</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">29</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">[]&nbsp;</font><font color="#000000">SIDES&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">[]&nbsp;{</font><br />
+<font color="#808080">30</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">1</font><font color="#000000">,</font><font color="#990000">2</font><font color="#000000">)</font><font color="#000000">,&nbsp;&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">2</font><font color="#000000">,</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">,&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">2</font><font color="#000000">,</font><font color="#990000">3</font><font color="#000000">)</font><font color="#000000">,&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(</font><font color="#990000">3</font><font color="#000000">,</font><font color="#990000">2</font><font color="#000000">)</font><br />
+<font color="#808080">31</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><font color="#000000">;</font><br />
+<font color="#808080">32</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">001</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">002</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;for&nbsp;storing,&nbsp;manipulating,&nbsp;and&nbsp;printing&nbsp;TicTacToe&nbsp;boards</font><br />
+<font color="#808080">003</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">Add&nbsp;a&nbsp;trialToWin&nbsp;method&nbsp;on&nbsp;May&nbsp;19,&nbsp;2017</font><br />
+<font color="#808080">004</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.1:&nbsp;Add&nbsp;a&nbsp;trialDoubleTreats&nbsp;method&nbsp;on&nbsp;May&nbsp;23,&nbsp;2017</font><br />
+<font color="#808080">005</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.8:&nbsp;...</font><br />
+<font color="#808080">006</font>&nbsp;<font color="#008000">*/</font><br />
+<font color="#808080">007</font>&nbsp;<font color="#0000c0"><b>import&nbsp;</b></font><font color="#000000">java.util.ArrayList;</font><br />
+<font color="#808080">008</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">009</font>&nbsp;<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">Board&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">010</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;final&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">SIZE&nbsp;=&nbsp;</font><font color="#990000">3</font><font color="#000000">;</font><br />
+<font color="#808080">011</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool</font><font color="#000000">[][]&nbsp;</font><font color="#000000">board;</font><br />
+<font color="#808080">012</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;moves;</font><br />
+<font color="#808080">013</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">014</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Board&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">015</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Tool</font><font color="#000000">[</font><font color="#000000">SIZE</font><font color="#000000">][</font><font color="#000000">SIZE</font><font color="#000000">]</font><font color="#000000">;</font><br />
+<font color="#808080">016</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">clear</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">017</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">018</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">019</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">020</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">clear&nbsp;</font><font color="#000000">()&nbsp;{&nbsp;</font><br />
+<font color="#808080">021</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;SIZE;&nbsp;i++</font><font color="#000000">)</font><br />
+<font color="#808080">022</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;j&nbsp;&lt;&nbsp;SIZE;&nbsp;j++</font><font color="#000000">)</font><br />
+<font color="#808080">023</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">][</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;Tool.EMPTY;</font><br />
+<font color="#808080">024</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">025</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">026</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">show&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">027</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Here&nbsp;is&nbsp;the&nbsp;current&nbsp;board:&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">028</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">029</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">030</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;r&nbsp;&lt;=&nbsp;SIZE;&nbsp;r++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">031</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;c&nbsp;&lt;=&nbsp;SIZE;&nbsp;c++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">032</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.print</font><font color="#000000">(&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">r-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">c-</font><font color="#990000">1</font><font color="#000000">]&nbsp;)</font><font color="#000000">;</font><br />
+<font color="#808080">033</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">034</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">c&nbsp;!=&nbsp;SIZE</font><font color="#000000">)&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Print&nbsp;strut&nbsp;after&nbsp;all&nbsp;but&nbsp;last&nbsp;column</font><br />
+<font color="#808080">035</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.print</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;|&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">036</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">037</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">038</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">()</font><font color="#000000">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">039</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">040</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">r&nbsp;!=&nbsp;SIZE</font><font color="#000000">)&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Print&nbsp;row&nbsp;line&nbsp;after&nbsp;all&nbsp;but&nbsp;last&nbsp;row</font><br />
+<font color="#808080">041</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;-+-+-&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">042</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">043</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">044</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">()</font><font color="#000000">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">045</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">046</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">047</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;getMoves&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">048</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">moves;</font><br />
+<font color="#808080">049</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">050</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">051</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">isGameWon&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">052</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>final&nbsp;</b></font><font color="#000000">Tool</font><font color="#000000">[][]&nbsp;</font><font color="#000000">b&nbsp;=&nbsp;board;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;a&nbsp;local&nbsp;variable&nbsp;for&nbsp;shorter&nbsp;expressions</font><br />
+<font color="#808080">053</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">054</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Check&nbsp;(short&nbsp;circuit)&nbsp;all&nbsp;rows,&nbsp;columns&nbsp;and&nbsp;diagonals&nbsp;for&nbsp;a&nbsp;win</font><br />
+<font color="#808080">055</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return</b></font><br />
+<font color="#808080">056</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">!=Tool.EMPTY&nbsp;&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Row&nbsp;0</font><br />
+<font color="#808080">057</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">!=Tool.EMPTY&nbsp;&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Row&nbsp;1</font><br />
+<font color="#808080">058</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">!=Tool.EMPTY&nbsp;&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Row&nbsp;2</font><br />
+<font color="#808080">059</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">060</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">!=Tool.EMPTY&nbsp;&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Col&nbsp;0</font><br />
+<font color="#808080">061</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">!=Tool.EMPTY&nbsp;&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Col&nbsp;1</font><br />
+<font color="#808080">062</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]</font><font color="#000000">!=Tool.EMPTY&nbsp;&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Col&nbsp;2</font><br />
+<font color="#808080">063</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">064</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">!=Tool.EMPTY&nbsp;&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]&nbsp;</font><font color="#000000">||&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Dia&nbsp;1</font><br />
+<font color="#808080">065</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">!=Tool.EMPTY&nbsp;&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">2</font><font color="#000000">][</font><font color="#990000">0</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;b</font><font color="#000000">[</font><font color="#990000">1</font><font color="#000000">][</font><font color="#990000">1</font><font color="#000000">]</font><font color="#000000">==b</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">][</font><font color="#990000">2</font><font color="#000000">]&nbsp;</font><font color="#000000">;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Dia&nbsp;2</font><br />
+<font color="#808080">066</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">067</font>&nbsp;<font color="#ffffff">&nbsp;</font><br />
+<font color="#808080">068</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">isFull&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">069</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;SIZE;&nbsp;i++</font><font color="#000000">)</font><br />
+<font color="#808080">070</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;j&nbsp;&lt;&nbsp;SIZE;&nbsp;j++</font><font color="#000000">)</font><br />
+<font color="#808080">071</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">][</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">==&nbsp;Tool.EMPTY</font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;false</b></font><font color="#000000">;</font><br />
+<font color="#808080">072</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">073</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;true</b></font><font color="#000000">;</font><br />
+<font color="#808080">074</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">075</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">076</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;getEmptyMoves&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">077</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;emptyMoves&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">ArrayList&lt;&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">078</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;SIZE;&nbsp;i++</font><font color="#000000">)</font><br />
+<font color="#808080">079</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;j&nbsp;&lt;&nbsp;SIZE;&nbsp;j++</font><font color="#000000">)</font><br />
+<font color="#808080">080</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">][</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">==&nbsp;Tool.EMPTY</font><font color="#000000">)&nbsp;</font><br />
+<font color="#808080">081</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">emptyMoves.add</font><font color="#000000">(&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(&nbsp;</font><font color="#000000">i+</font><font color="#990000">1</font><font color="#000000">,&nbsp;j+</font><font color="#990000">1</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#808080">082</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">083</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">emptyMoves;</font><br />
+<font color="#808080">084</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">085</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">086</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">isValid&nbsp;</font><font color="#000000">(</font><font color="#000000">Move&nbsp;move</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">087</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;move.getRow</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">088</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;move.getColumn</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">089</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">r-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">c-</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">==&nbsp;Tool.EMPTY;</font><br />
+<font color="#808080">090</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">091</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">092</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">handleMove&nbsp;</font><font color="#000000">(</font><font color="#000000">Move&nbsp;move,&nbsp;Tool&nbsp;player</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">093</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;move.getRow</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">094</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;move.getColumn</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">095</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">096</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">097</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;The&nbsp;move&nbsp;for&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;player&nbsp;+&nbsp;</font><font color="#990000">&#34;&nbsp;is&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;r&nbsp;+&nbsp;</font><font color="#990000">&#34;,&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;c&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">098</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">099</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">r-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">c-</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;player;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Place&nbsp;the&nbsp;player's&nbsp;mark&nbsp;on&nbsp;the&nbsp;board</font><br />
+<font color="#808080">100</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves.add</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">101</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">102</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">103</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">setMove&nbsp;</font><font color="#000000">(</font><font color="#000000">Move&nbsp;move,&nbsp;Tool&nbsp;player</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">104</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">move.getRow</font><font color="#000000">()</font><font color="#000000">-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">move.getColumn</font><font color="#000000">()</font><font color="#000000">-</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;player;</font><br />
+<font color="#808080">105</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves.add</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">106</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">107</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">108</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">clearMove&nbsp;</font><font color="#000000">(</font><font color="#000000">Move&nbsp;move</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">109</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">move.getRow</font><font color="#000000">()</font><font color="#000000">-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">move.getColumn</font><font color="#000000">()</font><font color="#000000">-</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;Tool.EMPTY;&nbsp;</font><br />
+<font color="#808080">110</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves.remove</font><font color="#000000">(&nbsp;</font><font color="#000000">moves.size</font><font color="#000000">()</font><font color="#000000">-</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">111</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">112</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">113</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">trialToWin&nbsp;</font><font color="#000000">(</font><font color="#000000">Move&nbsp;move,&nbsp;Tool&nbsp;player</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">114</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!isValid</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">))&nbsp;</font><font color="#0000c0"><b>return&nbsp;false</b></font><font color="#000000">;</font><br />
+<font color="#808080">115</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">116</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;move.getRow</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">117</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;move.getColumn</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">118</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">119</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">r-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">c-</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;player;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;just&nbsp;a&nbsp;trial&nbsp;move</font><br />
+<font color="#808080">120</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">result&nbsp;=&nbsp;isGameWon</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">121</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">r-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">c-</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;Tool.EMPTY;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;clear&nbsp;the&nbsp;trial&nbsp;move</font><br />
+<font color="#808080">122</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">123</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">result;</font><br />
+<font color="#808080">124</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">125</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">126</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">trialDoubleTreats&nbsp;</font><font color="#000000">(</font><font color="#000000">Move&nbsp;move,&nbsp;Tool&nbsp;player</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">127</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!isValid</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">))&nbsp;</font><font color="#0000c0"><b>return&nbsp;false</b></font><font color="#000000">;</font><br />
+<font color="#808080">128</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">129</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;move.getRow</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">130</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;move.getColumn</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">131</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">132</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">r-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">c-</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;player;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;the&nbsp;trial&nbsp;move</font><br />
+<font color="#808080">133</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">134</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">singleThreat&nbsp;=&nbsp;</font><font color="#0000c0"><b>false</b></font><font color="#000000">;</font><br />
+<font color="#808080">135</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">doubleThreat&nbsp;=&nbsp;</font><font color="#0000c0"><b>false</b></font><font color="#000000">;</font><br />
+<font color="#808080">136</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">i&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;i&nbsp;&lt;&nbsp;SIZE&nbsp;&amp;&amp;&nbsp;!doubleThreat;&nbsp;i++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">137</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">j&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;&nbsp;j&nbsp;&lt;&nbsp;SIZE;&nbsp;j++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">138</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">][</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">==&nbsp;Tool.EMPTY</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">139</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">][</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;player;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;the&nbsp;next&nbsp;trial&nbsp;move</font><br />
+<font color="#808080">140</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">isGameWon</font><font color="#000000">())&nbsp;{</font><br />
+<font color="#808080">141</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!singleThreat</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">142</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">singleThreat&nbsp;=&nbsp;</font><font color="#0000c0"><b>true</b></font><font color="#000000">;</font><br />
+<font color="#808080">143</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>else&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#808080">144</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">doubleThreat&nbsp;=&nbsp;</font><font color="#0000c0"><b>true</b></font><font color="#000000">;&nbsp;&nbsp;</font><br />
+<font color="#808080">145</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">][</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;Tool.EMPTY;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;clear&nbsp;the&nbsp;next&nbsp;trial&nbsp;move</font><br />
+<font color="#808080">146</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>break</b></font><font color="#000000">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;break&nbsp;the&nbsp;inner&nbsp;for&nbsp;loop</font><br />
+<font color="#808080">147</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><br />
+<font color="#808080">148</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">149</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">i</font><font color="#000000">][</font><font color="#000000">j</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;Tool.EMPTY;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;clear&nbsp;the&nbsp;next&nbsp;trial&nbsp;move</font><br />
+<font color="#808080">150</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">151</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">152</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">153</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">154</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board</font><font color="#000000">[</font><font color="#000000">r-</font><font color="#990000">1</font><font color="#000000">][</font><font color="#000000">c-</font><font color="#990000">1</font><font color="#000000">]&nbsp;</font><font color="#000000">=&nbsp;Tool.EMPTY;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;clear&nbsp;the&nbsp;trial&nbsp;move</font><br />
+<font color="#808080">155</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">156</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">doubleThreat;</font><br />
+<font color="#808080">157</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">158</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">1</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">2</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">Interace&nbsp;for&nbsp;an&nbsp;agent&nbsp;who&nbsp;can&nbsp;provide&nbsp;a&nbsp;next&nbsp;move&nbsp;in&nbsp;an&nbsp;undergoing&nbsp;game</font><br />
+<font color="#808080">3</font>&nbsp;<font color="#008000">*/</font><br />
+<font color="#808080">4</font>&nbsp;<font color="#0000c0"><b>public&nbsp;interface&nbsp;</b></font><font color="#000000">TicTacToeAgent&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">5</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;nextMove&nbsp;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">6</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">001</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">002</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;for&nbsp;finding&nbsp;the&nbsp;best&nbsp;move&nbsp;in&nbsp;a&nbsp;TicTacToe&nbsp;board&nbsp;automatically</font><br />
+<font color="#808080">003</font>&nbsp;<font color="#008000">*/</font><br />
+<font color="#808080">004</font>&nbsp;<font color="#0000c0"><b>import&nbsp;</b></font><font color="#000000">java.util.ArrayList;</font><br />
+<font color="#808080">005</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">006</font>&nbsp;<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">AIAssistance&nbsp;</font><font color="#0000c0"><b>implements&nbsp;</b></font><font color="#000000">TicTacToeAgent&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">007</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Board&nbsp;board;</font><br />
+<font color="#808080">008</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;me;</font><br />
+<font color="#808080">009</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;opposite;</font><br />
+<font color="#808080">010</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">011</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">AIAssistance&nbsp;</font><font color="#000000">(</font><font color="#000000">Board&nbsp;board,&nbsp;Tool&nbsp;me,&nbsp;Tool&nbsp;opposite</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">012</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.board&nbsp;=&nbsp;board;</font><br />
+<font color="#808080">013</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.me&nbsp;=&nbsp;me;</font><br />
+<font color="#808080">014</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.opposite&nbsp;=&nbsp;opposite;</font><br />
+<font color="#808080">015</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">016</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">017</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Move&nbsp;nextMove&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">018</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;obviousMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">019</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">move&nbsp;!=&nbsp;</font><font color="#0000c0"><b>null</b></font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">move;</font><br />
+<font color="#808080">020</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">021</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">smartMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">022</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><br />
+<font color="#808080">023</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">024</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>protected&nbsp;</b></font><font color="#000000">Move&nbsp;obviousMove&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">025</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;moves&nbsp;=&nbsp;nextKillerMoves</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">026</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">moves.size</font><font color="#000000">()&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">Moves.anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">moves</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">027</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">028</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves&nbsp;=&nbsp;nextSurviveMoves</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">029</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">moves.size</font><font color="#000000">()&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">Moves.anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">moves</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">030</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">031</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;null</b></font><font color="#000000">;</font><br />
+<font color="#808080">032</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">033</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">034</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>protected&nbsp;</b></font><font color="#000000">Move&nbsp;smartMove&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">035</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;moves&nbsp;=&nbsp;board.getMoves</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">036</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">moves.size</font><font color="#000000">()&nbsp;</font><font color="#000000">==&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;smart&nbsp;starting&nbsp;:-)</font><br />
+<font color="#808080">037</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">Moves.randomStartMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">038</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">039</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">moves.size</font><font color="#000000">()&nbsp;</font><font color="#000000">==&nbsp;</font><font color="#990000">3&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;moves.get</font><font color="#000000">(</font><font color="#990000">0</font><font color="#000000">)</font><font color="#000000">.isCatercorner</font><font color="#000000">(&nbsp;</font><font color="#000000">moves.get</font><font color="#000000">(</font><font color="#990000">2</font><font color="#000000">)))&nbsp;</font><br />
+<font color="#808080">040</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">Moves.anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">Moves.SIDES</font><font color="#000000">)</font><font color="#000000">;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;The&nbsp;unique&nbsp;special&nbsp;case!</font><br />
+<font color="#808080">041</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">042</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves&nbsp;=&nbsp;nextDoubleThreatsMoves</font><font color="#000000">(&nbsp;</font><font color="#000000">me</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">043</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">moves.size</font><font color="#000000">()&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">Moves.anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">moves</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">044</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">045</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves&nbsp;=&nbsp;nextDoubleThreatsMoves</font><font color="#000000">(&nbsp;</font><font color="#000000">opposite</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">046</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">moves.size</font><font color="#000000">()&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">047</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves&nbsp;=&nbsp;antiDoubleThreatsMoves</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">048</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">moves.size</font><font color="#000000">()&nbsp;</font><font color="#000000">&gt;&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">Moves.anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">moves</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">049</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">050</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">051</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">Moves.anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">maxCrossMoves</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">052</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><br />
+<font color="#808080">053</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">054</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;nextKillerMoves&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">055</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">trialToWinMoves</font><font color="#000000">(&nbsp;</font><font color="#000000">me</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">056</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">057</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">058</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;nextSurviveMoves&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">059</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">trialToWinMoves</font><font color="#000000">(&nbsp;</font><font color="#000000">opposite</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">060</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">061</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">062</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;trialToWinMoves&nbsp;</font><font color="#000000">(</font><font color="#000000">Tool&nbsp;player</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">063</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;moves&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">064</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;r&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;r++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">065</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;c&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;c++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">066</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(&nbsp;</font><font color="#000000">r,&nbsp;c</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">067</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.trialToWin</font><font color="#000000">(&nbsp;</font><font color="#000000">move,&nbsp;player</font><font color="#000000">))&nbsp;</font><br />
+<font color="#808080">068</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves.add</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">069</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">070</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><br />
+<font color="#808080">071</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">moves;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">072</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">073</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">074</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;nextDoubleThreatsMoves&nbsp;</font><font color="#000000">(</font><font color="#000000">Tool&nbsp;player</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">075</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;moves&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">076</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;r&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;r++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">077</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;c&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;c++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">078</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(&nbsp;</font><font color="#000000">r,&nbsp;c</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">079</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.trialDoubleTreats</font><font color="#000000">(&nbsp;</font><font color="#000000">move,&nbsp;player</font><font color="#000000">))&nbsp;</font><br />
+<font color="#808080">080</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves.add</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">081</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">082</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><br />
+<font color="#808080">083</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">moves;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">084</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">085</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">086</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;antiDoubleThreatsMoves&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">087</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;moves&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">088</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;r&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;r++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">089</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;c&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;c++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">090</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(&nbsp;</font><font color="#000000">r,&nbsp;c</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">091</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isValid</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">))&nbsp;{</font><br />
+<font color="#808080">092</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board.setMove</font><font color="#000000">(&nbsp;</font><font color="#000000">move,&nbsp;me</font><font color="#000000">)</font><font color="#000000">;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;trial&nbsp;a&nbsp;move&nbsp;</font><br />
+<font color="#808080">093</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;to&nbsp;check&nbsp;whether&nbsp;there&nbsp;is&nbsp;double-threat-move&nbsp;for&nbsp;opposite&nbsp;</font><br />
+<font color="#808080">094</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;threatMoves&nbsp;=&nbsp;</font><br />
+<font color="#808080">095</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">nextDoubleThreatsMoves</font><font color="#000000">(&nbsp;</font><font color="#000000">opposite</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">096</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">threatMoves.size</font><font color="#000000">()&nbsp;</font><font color="#000000">==&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;</font><br />
+<font color="#808080">097</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves.add</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">098</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board.clearMove</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">)</font><font color="#000000">;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;clear&nbsp;trial&nbsp;move</font><br />
+<font color="#808080">099</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">100</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">101</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">102</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">moves;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">103</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">104</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">105</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;maxCrossMoves&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">106</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">maxCross&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br />
+<font color="#808080">107</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;r&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;r++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">108</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;c&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;c++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">109</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(&nbsp;</font><font color="#000000">r,&nbsp;c</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">110</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isValid</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">)&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;move.getCross</font><font color="#000000">()&nbsp;</font><font color="#000000">&gt;&nbsp;maxCross</font><font color="#000000">)&nbsp;</font><br />
+<font color="#808080">111</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">maxCross&nbsp;=&nbsp;move.getCross</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">112</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">113</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">114</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">115</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">ArrayList&lt;Move&gt;&nbsp;moves&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">ArrayList&lt;Move&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">116</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">r&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;r&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;r++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">117</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">c&nbsp;=&nbsp;</font><font color="#990000">1</font><font color="#000000">;&nbsp;c&nbsp;&lt;=&nbsp;Board.SIZE;&nbsp;c++</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">118</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(&nbsp;</font><font color="#000000">r,&nbsp;c</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">119</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">((</font><font color="#000000">board.isValid</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">))&nbsp;</font><font color="#000000">&amp;&amp;&nbsp;move.getCross</font><font color="#000000">()&nbsp;</font><font color="#000000">==&nbsp;maxCross</font><font color="#000000">)</font><br />
+<font color="#808080">120</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">moves.add</font><font color="#000000">(&nbsp;</font><font color="#000000">move</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">121</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">122</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">123</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">moves;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">124</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">125</font>&nbsp;<font color="#000000">}&nbsp;&nbsp;</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">RandomAgent&nbsp;</font><font color="#0000c0"><b>implements&nbsp;</b></font><font color="#000000">TicTacToeAgent&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Board&nbsp;board;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">04</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">RandomAgent&nbsp;</font><font color="#000000">(</font><font color="#000000">Board&nbsp;board</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.board&nbsp;=&nbsp;board;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Move&nbsp;nextMove&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">Moves.anyMoveFrom</font><font color="#000000">(&nbsp;</font><font color="#000000">board.getEmptyMoves</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;for&nbsp;finding&nbsp;next&nbsp;move&nbsp;in&nbsp;a&nbsp;TicTacToe&nbsp;board&nbsp;automatically&nbsp;</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">consistent&nbsp;with&nbsp;the&nbsp;giving&nbsp;IQ.</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#008000">*/</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">WisdomAgent&nbsp;</font><font color="#0000c0"><b>extends&nbsp;</b></font><font color="#000000">AIAssistance&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">iQ;&nbsp;</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>double&nbsp;</b></font><font color="#000000">smartProbility;</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">RandomAgent&nbsp;randomAid;&nbsp;</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">WisdomAgent&nbsp;</font><font color="#000000">(</font><font color="#000000">Board&nbsp;board,&nbsp;Tool&nbsp;me,&nbsp;Tool&nbsp;opposite,&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">iQ</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>super</b></font><font color="#000000">(&nbsp;</font><font color="#000000">board,&nbsp;me,&nbsp;opposite</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">.iQ&nbsp;=&nbsp;iQ;</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">smartProbility&nbsp;=&nbsp;iQ&nbsp;/&nbsp;</font><font color="#990000">100.0</font><font color="#000000">;</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">randomAid&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">RandomAgent</font><font color="#000000">(&nbsp;</font><font color="#000000">board</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">Move&nbsp;nextMove&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">iQ&nbsp;&lt;=&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">randomAid.nextMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>super</b></font><font color="#000000">.obviousMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">move&nbsp;!=&nbsp;</font><font color="#0000c0"><b>null</b></font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">move;</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">25</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">iQ&nbsp;==&nbsp;</font><font color="#990000">1</font><font color="#000000">)&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">randomAid.nextMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">26</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">iQ&nbsp;&gt;=&nbsp;</font><font color="#990000">100</font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;super</b></font><font color="#000000">.smartMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">27</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">28</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">random.nextBooleanBy</font><font color="#000000">(&nbsp;</font><font color="#000000">smartProbility</font><font color="#000000">))&nbsp;</font><br />
+<font color="#808080">29</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;super</b></font><font color="#000000">.smartMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">30</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>else&nbsp;</b></font><br />
+<font color="#808080">31</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">randomAid.nextMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">32</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><br />
+<font color="#808080">33</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">34</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">RandomGenerator&nbsp;random&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">RandomGenerator</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">35</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">001</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">002</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;playing&nbsp;a&nbsp;game&nbsp;of&nbsp;TicTacToe</font><br />
+<font color="#808080">003</font>&nbsp;<font color="#008000">*/</font><br />
+<font color="#808080">004</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">005</font>&nbsp;<font color="#0000c0"><b>import&nbsp;</b></font><font color="#000000">java.util.Random;</font><br />
+<font color="#808080">006</font>&nbsp;<font color="#0000c0"><b>import&nbsp;</b></font><font color="#000000">java.util.Scanner;</font><br />
+<font color="#808080">007</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">008</font>&nbsp;<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">TicTacToe&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">009</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;player;</font><br />
+<font color="#808080">010</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;computer;</font><br />
+<font color="#808080">011</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;person;</font><br />
+<font color="#808080">012</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">013</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Board&nbsp;board;</font><br />
+<font color="#808080">014</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">TicTacToeAgent&nbsp;agent;</font><br />
+<font color="#808080">015</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">016</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">TicTacToe&nbsp;</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">agentIQ</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">017</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">showStartHint</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">018</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">randomFirstPlayer</font><font color="#000000">()</font><font color="#000000">;&nbsp;&nbsp;</font><br />
+<font color="#808080">019</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">020</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Board</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">021</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">agent&nbsp;=&nbsp;agentCreator</font><font color="#000000">(&nbsp;</font><font color="#000000">agentIQ</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">022</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">023</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">024</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">TicTacToe&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">025</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">(&nbsp;</font><font color="#990000">100</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">026</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">027</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">028</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">play&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">029</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board.show</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">030</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">031</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">gameOver&nbsp;=&nbsp;</font><font color="#0000c0"><b>false</b></font><font color="#000000">;</font><br />
+<font color="#808080">032</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!gameOver</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">033</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;getAMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">034</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board.handleMove</font><font color="#000000">(&nbsp;</font><font color="#000000">move,&nbsp;player</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">035</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">036</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board.show</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">037</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">038</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isGameWon</font><font color="#000000">()&nbsp;</font><font color="#000000">||&nbsp;board.isFull</font><font color="#000000">())</font><br />
+<font color="#808080">039</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">gameOver&nbsp;=&nbsp;</font><font color="#0000c0"><b>true</b></font><font color="#000000">;</font><br />
+<font color="#808080">040</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>else&nbsp;</b></font><br />
+<font color="#808080">041</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">player&nbsp;=&nbsp;oppositePlayer</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">042</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">043</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">044</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">showGameResult</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">045</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">046</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">047</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">TicTacToeAgent&nbsp;agentCreator&nbsp;</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">iQ</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">048</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">TicTacToeAgent&nbsp;agent;</font><br />
+<font color="#808080">049</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>switch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">iQ</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">050</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>case&nbsp;</b></font><font color="#990000">0&nbsp;&nbsp;&nbsp;</font><font color="#000000">:&nbsp;&nbsp;agent&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">RandomAgent</font><font color="#000000">(&nbsp;</font><font color="#000000">board</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#0000c0"><b>break</b></font><font color="#000000">;</font><br />
+<font color="#808080">051</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>case&nbsp;</b></font><font color="#990000">100&nbsp;</font><font color="#000000">:&nbsp;&nbsp;agent&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">AIAssistance</font><font color="#000000">(&nbsp;</font><font color="#000000">board,&nbsp;computer,&nbsp;person</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#0000c0"><b>break</b></font><font color="#000000">;</font><br />
+<font color="#808080">052</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>default&nbsp;&nbsp;</b></font><font color="#000000">:&nbsp;&nbsp;agent&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">WisdomAgent</font><font color="#000000">(&nbsp;</font><font color="#000000">board,&nbsp;computer,&nbsp;person,&nbsp;iQ</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#0000c0"><b>break</b></font><font color="#000000">;</font><br />
+<font color="#808080">053</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">054</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">agent;</font><br />
+<font color="#808080">055</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">056</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">057</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">showStartHint</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">058</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#000000">HINT_MESSAGE</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">059</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">060</font>&nbsp;<font color="#ffffff"></font><br />
+<font color="#808080">061</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">randomFirstPlayer&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">062</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">generator.nextBoolean</font><font color="#000000">())&nbsp;{</font><br />
+<font color="#808080">063</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">person&nbsp;&nbsp;&nbsp;=&nbsp;Tool.X;&nbsp;</font><br />
+<font color="#808080">064</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">computer&nbsp;=&nbsp;Tool.O;</font><br />
+<font color="#808080">065</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>else&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#808080">066</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">person&nbsp;&nbsp;&nbsp;=&nbsp;Tool.O;&nbsp;</font><br />
+<font color="#808080">067</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">computer&nbsp;=&nbsp;Tool.X;</font><br />
+<font color="#808080">068</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">069</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">player&nbsp;=&nbsp;Tool.X;</font><br />
+<font color="#808080">070</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">071</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">072</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;oppositePlayer&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">073</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">(</font><font color="#000000">player&nbsp;==&nbsp;computer</font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;person&nbsp;:&nbsp;computer;</font><br />
+<font color="#808080">074</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">075</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">076</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">showGameResult&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">077</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isGameWon</font><font color="#000000">())</font><br />
+<font color="#808080">078</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#000000">player==person&nbsp;?&nbsp;</font><font color="#990000">&#34;You&nbsp;won!&#34;&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#990000">&#34;I&nbsp;won!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">079</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>else&nbsp;if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isFull</font><font color="#000000">())</font><br />
+<font color="#808080">080</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;We&nbsp;tied!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">081</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>else</b></font><br />
+<font color="#808080">082</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Something&nbsp;went&nbsp;wrong!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">083</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#000000">board.getMoves</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#808080">084</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">085</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">086</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Creates&nbsp;a&nbsp;move,&nbsp;either&nbsp;a&nbsp;random&nbsp;generated&nbsp;move&nbsp;or&nbsp;as&nbsp;input&nbsp;from&nbsp;the&nbsp;user</font><br />
+<font color="#808080">087</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Move&nbsp;getAMove&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">088</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#808080">089</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">090</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">player&nbsp;==&nbsp;computer</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">091</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;It&nbsp;is&nbsp;my&nbsp;move.&nbsp;&nbsp;I&nbsp;am&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;player&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">092</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">move&nbsp;=&nbsp;agent.nextMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">093</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>else&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#808080">094</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;It&nbsp;is&nbsp;your&nbsp;move.&nbsp;&nbsp;You&nbsp;are&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;player&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">095</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">move&nbsp;=&nbsp;getAValidMoveFromPerson</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">096</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">097</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">move;</font><br />
+<font color="#808080">098</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">099</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">100</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Move&nbsp;getAValidMoveFromPerson&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#808080">101</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#808080">102</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#0000c0"><b>true</b></font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">103</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>try&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#808080">104</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.print</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Enter&nbsp;a&nbsp;row&nbsp;and&nbsp;column&nbsp;on&nbsp;one&nbsp;line:&nbsp;&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">105</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">move&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(&nbsp;</font><font color="#000000">in.nextInt</font><font color="#000000">()</font><font color="#000000">,&nbsp;in.nextInt</font><font color="#000000">()&nbsp;)</font><font color="#000000">;</font><br />
+<font color="#808080">106</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Generates&nbsp;an&nbsp;exception&nbsp;if&nbsp;can't&nbsp;make&nbsp;a&nbsp;move&nbsp;from&nbsp;r&nbsp;and&nbsp;c</font><br />
+<font color="#808080">107</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">108</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isValid</font><font color="#000000">(&nbsp;</font><font color="#000000">move&nbsp;</font><font color="#000000">))&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">move;</font><br />
+<font color="#808080">109</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">110</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Invalid&nbsp;move.&nbsp;Try&nbsp;again!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">111</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>catch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">Exception&nbsp;e</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">112</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Input&nbsp;error.&nbsp;Try&nbsp;again!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">113</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">114</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">115</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">116</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">117</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">Scanner&nbsp;in&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Scanner</font><font color="#000000">(&nbsp;</font><font color="#000000">System.in&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">118</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">Random&nbsp;generator&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Random</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">119</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#808080">120</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;HINT_MESSAGE&nbsp;=&nbsp;</font><font color="#990000">&#34;\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#808080">121</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;************************************************\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#808080">122</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;Let's&nbsp;play&nbsp;Tic&nbsp;Tac&nbsp;Toe!\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#808080">123</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;When&nbsp;asked&nbsp;for&nbsp;a&nbsp;move,&nbsp;enter&nbsp;location&nbsp;you&nbsp;want.\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#808080">124</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;Enter&nbsp;the&nbsp;row&nbsp;first&nbsp;and&nbsp;then&nbsp;the&nbsp;column,&nbsp;both&nbsp;on&nbsp;the&nbsp;same&nbsp;line.\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#808080">125</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;The&nbsp;row&nbsp;and&nbsp;column&nbsp;must&nbsp;in&nbsp;the&nbsp;range&nbsp;1&nbsp;..&nbsp;3\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#808080">126</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;************************************************\n&#34;&nbsp;</font><font color="#000000">;</font><br />
+<font color="#808080">127</font>&nbsp;<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+<p />
+
+
+<p /> <hr /> <p /> <p /><div align="left" class="java">
+<table border="2" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#808080">01</font>&nbsp;<font color="#008000">/**</font><br />
+<font color="#808080">02</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">version&nbsp;3.8</font><br />
+<font color="#808080">03</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">04</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;for&nbsp;testing&nbsp;the&nbsp;TicTacToeGame&nbsp;class.</font><br />
+<font color="#808080">05</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">06</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">Refactored&nbsp;by&nbsp;Max&nbsp;He,&nbsp;March&nbsp;2008</font><br />
+<font color="#808080">07</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">Rearranged&nbsp;on&nbsp;June&nbsp;20,&nbsp;2008</font><br />
+<font color="#808080">08</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.0,&nbsp;Add&nbsp;AIAssistance&nbsp;on&nbsp;May&nbsp;19,&nbsp;2017,&nbsp;Max</font><br />
+<font color="#808080">09</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.0.1,&nbsp;Correct&nbsp;a&nbsp;syntax&nbsp;error&nbsp;in&nbsp;line&nbsp;45&nbsp;in&nbsp;AIAssistance&nbsp;On&nbsp;May&nbsp;20,&nbsp;2017,&nbsp;by&nbsp;Liu&nbsp;Hao</font><br />
+<font color="#808080">10</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.0.5,&nbsp;Add&nbsp;random&nbsp;move&nbsp;selection&nbsp;when&nbsp;there&nbsp;are&nbsp;more&nbsp;than&nbsp;one&nbsp;moves&nbsp;in&nbsp;AIAssistance.&nbsp;</font><br />
+<font color="#808080">11</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.1,&nbsp;Add&nbsp;a&nbsp;nextDoubleThreatsMoves&nbsp;method&nbsp;in&nbsp;AIAssistance.&nbsp;May&nbsp;23,&nbsp;2017</font><br />
+<font color="#808080">12</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.1.1,&nbsp;Correct&nbsp;some&nbsp;syntax&nbsp;errors&nbsp;On&nbsp;May&nbsp;23,&nbsp;2017,&nbsp;by&nbsp;Liu&nbsp;Hao</font><br />
+<font color="#808080">13</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v3.0,&nbsp;add&nbsp;TicTactoeAgent:&nbsp;RandomAgent,&nbsp;WisdomAgent&nbsp;with&nbsp;IQ,&nbsp;May&nbsp;28-29</font><br />
+<font color="#808080">14</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v3.8,&nbsp;Optimized&nbsp;to&nbsp;become&nbsp;a&nbsp;real&nbsp;guru&nbsp;:-)&nbsp;,&nbsp;May&nbsp;30,&nbsp;2017</font><br />
+<font color="#808080">15</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v3.88,&nbsp;Refactored,&nbsp;May&nbsp;15,&nbsp;2018</font><br />
+<font color="#808080">16</font>&nbsp;<font color="#008000">*/</font><br />
+<font color="#808080">17</font>&nbsp;<font color="#0000c0"><b>class&nbsp;</b></font><font color="#000000">TicTacToeGame&nbsp;</font><font color="#000000">{</font><br />
+<font color="#808080">18</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">main&nbsp;</font><font color="#000000">(</font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">args</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">19</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">agentIQ&nbsp;=&nbsp;getIQfrom</font><font color="#000000">(&nbsp;</font><font color="#000000">args</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">20</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">TicTacToe&nbsp;game&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">TicTacToe</font><font color="#000000">(&nbsp;</font><font color="#000000">agentIQ</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">21</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">game.play</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#808080">22</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Goodbye!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#808080">23</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">24</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">25</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">getIQfrom&nbsp;</font><font color="#000000">(</font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">s</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#808080">26</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">iQ&nbsp;=&nbsp;</font><font color="#990000">100</font><font color="#000000">;</font><br />
+<font color="#808080">27</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">s.length&nbsp;==&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">iQ;</font><br />
+<font color="#808080">28</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">29</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>try&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#808080">30</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">iQ&nbsp;=&nbsp;Integer.parseInt</font><font color="#000000">(&nbsp;</font><font color="#000000">s</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">])</font><font color="#000000">;</font><br />
+<font color="#808080">31</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>catch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">Exception&nbsp;e</font><font color="#000000">)&nbsp;{}</font><br />
+<font color="#808080">32</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#808080">33</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">iQ;</font><br />
+<font color="#808080">34</font>&nbsp;<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#808080">35</font>&nbsp;<font color="#000000">}</font><br />
+<font color="#ffffff"></font><font color="#ffffff">
+</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>

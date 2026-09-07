@@ -1,0 +1,8 @@
+- Reviewed and organized lecture notes on Software Complexity Metrics introduction: computational complexity vs. software engineering complexity (human developer perspective), May 20, 20:00 – 21:00
+- Studied Cyclomatic Complexity (McCabe): definition V(G)=e−n+2, control flow graph construction, conversion from code to flowchart to graph, May 21, 20:30 – 21:30
+- Studied paths, circuits, cycles, and linearly independent paths; basis set and baseline method for finding basis cycles; path coverage in unit testing, May 22, 21:00 – 22:00
+- Reviewed issues and limitations of Cyclomatic Complexity (sequential statements insensitivity, optional vs. alternative choices, compound conditions, switch statements, nested vs. sequential decisions), May 23, 15:00 – 16:00
+- Studied CC for modular programs (V vs. V_LI) and practical quality guidelines (CC ≤ 10), May 23, 16:00 – 17:00
+- Reviewed Class Cohesion Metrics introduction: internal/syntactic vs. external/semantic cohesion, ordinal cohesion scale (functional to coincidental), May 24, 19:30 – 20:30
+- Studied LCOM1–LCOM5, Coh, TCC/LCC, DC_D/DC_I, CC, SCOM, LSCC, NHD, CAMC, SNHD metrics; analyzed Lack of Discrimination Anomaly (LDA) cases and performance comparisons, May 25, 21:00 – 22:00
+- Compiled integrated notes on software complexity and cohesion metrics; prepared for project report and upcoming exam review, May 26, 20:00 – 21:00

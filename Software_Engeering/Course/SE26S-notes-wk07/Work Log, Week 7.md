@@ -1,0 +1,10 @@
+- Attended lecture on Object Oriented Design Basics (SE26S-07A), Apr. 22, 14:00 – 16:30
+- Reviewed lecture notes: assigning responsibilities from use case plans to domain model modules (walkthrough method), Apr. 22, 20:00 – 21:00
+- Studied design principles: Expert Doer, High Cohesion, Low Coupling; analyzed tradeoffs and compromises in design, Apr. 23, 20:30 – 21:30
+- Practiced sequence diagram mapping from use case to design (Unlock UC variations), Apr. 24, 21:00 – 22:00
+- Attended lecture on OO Design Principles (SE26S-07B), Apr. 22 (covered in same session), 14:00 – 16:30 
+- Studied SOLID principles (SRP, OCP, LSP, ISP, DIP) and Dependency Inversion Pattern, Apr. 25, 15:00 – 16:30
+- Reviewed other principles: Composition over Inheritance, DRY, IoC, YAGNI, Law of Demeter, PoLA, MVP, Apr. 25, 16:30 – 17:30
+- Analyzed the Safe Home Access design examples and Dependency Inversion application to business policies vs. mechanisms, Apr. 26, 19:30 – 20:30
+- Studied TicTacToe game code structure (Tool, Move, Board, TicTacToe, TicTacToeGame) and Rational class implementation, Apr. 27, 21:00 – 22:00
+- Compiled integrated notes on OOD responsibilities, design principles, and programming examples; reviewed class diagram and traceability connections, Apr. 28, 20:00 – 21:00
