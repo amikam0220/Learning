@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#008000">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">version&nbsp;3.8</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;for&nbsp;testing&nbsp;the&nbsp;TicTacToeGame&nbsp;class.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">Refactored&nbsp;by&nbsp;Max&nbsp;He,&nbsp;March&nbsp;2008</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">Rearranged&nbsp;on&nbsp;June&nbsp;20,&nbsp;2008</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.0,&nbsp;Add&nbsp;AIAssistance&nbsp;on&nbsp;May&nbsp;19,&nbsp;2017,&nbsp;Max</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.0.1,&nbsp;Correct&nbsp;a&nbsp;syntax&nbsp;error&nbsp;in&nbsp;line&nbsp;45&nbsp;in&nbsp;AIAssistance&nbsp;On&nbsp;May&nbsp;20,&nbsp;2017,&nbsp;by&nbsp;Liu&nbsp;Hao</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.0.5,&nbsp;Add&nbsp;random&nbsp;move&nbsp;selection&nbsp;when&nbsp;there&nbsp;are&nbsp;more&nbsp;than&nbsp;one&nbsp;moves&nbsp;in&nbsp;AIAssistance.&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.1,&nbsp;Add&nbsp;a&nbsp;nextDoubleThreatsMoves&nbsp;method&nbsp;in&nbsp;AIAssistance.&nbsp;May&nbsp;23,&nbsp;2017</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v2.1.1,&nbsp;Correct&nbsp;some&nbsp;syntax&nbsp;errors&nbsp;On&nbsp;May&nbsp;23,&nbsp;2017,&nbsp;by&nbsp;Liu&nbsp;Hao</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v3.0,&nbsp;add&nbsp;TicTactoeAgent:&nbsp;RandomAgent,&nbsp;WisdomAgent&nbsp;with&nbsp;IQ,&nbsp;May&nbsp;28-29</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v3.8,&nbsp;Optimized&nbsp;to&nbsp;become&nbsp;a&nbsp;real&nbsp;guru&nbsp;:-)&nbsp;,&nbsp;May&nbsp;30,&nbsp;2017</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">v3.88,&nbsp;Refactored,&nbsp;May&nbsp;15,&nbsp;2018</font><br />
+<font color="#008000">*/</font><br />
+<font color="#0000c0"><b>class&nbsp;</b></font><font color="#000000">TicTacToeGame&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;static&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">main&nbsp;</font><font color="#000000">(</font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">args</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">agentIQ&nbsp;=&nbsp;getIQfrom</font><font color="#000000">(&nbsp;</font><font color="#000000">args</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">TicTacToe&nbsp;game&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">TicTacToe</font><font color="#000000">(&nbsp;</font><font color="#000000">agentIQ</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">game.play</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Goodbye!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">getIQfrom&nbsp;</font><font color="#000000">(</font><font color="#000000">String</font><font color="#000000">[]&nbsp;</font><font color="#000000">s</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">iQ&nbsp;=&nbsp;</font><font color="#990000">100</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">s.length&nbsp;==&nbsp;</font><font color="#990000">0</font><font color="#000000">)&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">iQ;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>try&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">iQ&nbsp;=&nbsp;Integer.parseInt</font><font color="#000000">(&nbsp;</font><font color="#000000">s</font><font color="#000000">[</font><font color="#990000">0</font><font color="#000000">])</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>catch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">Exception&nbsp;e</font><font color="#000000">)&nbsp;{}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">iQ;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#000000">}</font><br />
+<font color="#ffffff"></font><font color="#ffffff">
+</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>

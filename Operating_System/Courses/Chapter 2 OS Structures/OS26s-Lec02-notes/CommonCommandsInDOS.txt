@@ -1,0 +1,133 @@
+Here are some commonly used commands in DOS (Disk Operating System):
+
+1. File & Directory Operations
+•   DIR - List directory contents
+
+•   CD or CHDIR - Change directory
+
+•   MD or MKDIR - Create directory
+
+•   RD or RMDIR - Remove directory
+
+•   COPY - Copy files
+
+•   XCOPY - Copy files and directories
+
+•   MOVE - Move files
+
+•   DEL or ERASE - Delete files
+
+•   REN or RENAME - Rename files
+
+•   TYPE - Display file contents
+
+•   ATTRIB - Display/change file attributes
+
+•   TREE - Display directory structure
+
+•   FC - File compare
+
+2. Disk Operations
+•   FORMAT - Format a disk
+
+•   CHKDSK - Check disk
+
+•   DISKCOPY - Copy diskette
+
+•   DISKCOMP - Compare diskettes
+
+•   LABEL - Create/change/delete volume label
+
+•   VOL - Display volume label
+
+•   SUBST - Substitute a path with a drive letter
+
+3. System Information & Configuration
+•   CLS - Clear screen
+
+•   VER - Display DOS version
+
+•   DATE - Display/set date
+
+•   TIME - Display/set time
+
+•   PROMPT - Change command prompt
+
+•   PATH - Display/set search path
+
+•   SET - Display/set environment variables
+
+•   MEM - Display memory usage
+
+•   MODE - Configure system devices
+
+4. Batch File Commands
+•   ECHO - Display messages/toggle command echoing
+
+•   @ - Suppress display of current command
+
+•   REM - Remark/comment
+
+•   PAUSE - Suspend processing
+
+•   GOTO - Jump to a labeled line
+
+•   IF - Conditional processing
+
+•   FOR - Repetitive processing
+
+•   CALL - Call one batch program from another
+
+•   CHOICE - Prompt user to make a choice (MS-DOS 6+)
+
+5. I/O Redirection & Pipes
+•   > - Redirect output to file (overwrite)
+
+•   >> - Redirect output to file (append)
+
+•   < - Redirect input from file
+
+•   | - Pipe output to another command
+
+•   MORE - Display output one screen at a time
+
+6. Other Useful Commands
+•   EDIT - Full-screen text editor (MS-DOS 5+)
+
+•   HELP - Display help (MS-DOS 5+)
+
+•   SORT - Sort input
+
+•   FIND - Search for text in files
+
+•   COMMAND - Start new command processor
+
+•   EXIT - Exit command processor
+
+•   DOSKEY - Command line editor/recall (MS-DOS 5+)
+
+•   DEBUG - Assembly language debugger
+
+•   BACKUP/RESTORE - Backup/restore files
+
+•   PRINT - Print text file
+
+File Attributes (used with ATTRIB command):
+•   R - Read-only
+
+•   A - Archive
+
+•   S - System
+
+•   H - Hidden
+
+Common Switches:
+•   /P - Pause after each screen (e.g., DIR /P)
+
+•   /W - Wide list format (e.g., DIR /W)
+
+•   /S - Include subdirectories
+
+•   /Q - Quiet mode
+
+Note: Many DOS commands are also available in Windows Command Prompt for backward compatibility, though some functionality may differ.

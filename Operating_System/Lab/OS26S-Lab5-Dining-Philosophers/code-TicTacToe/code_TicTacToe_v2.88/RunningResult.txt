@@ -1,0 +1,127 @@
+RunningResult.txt
+H:\work\TicTacToe\v2.88>javac TicTacToeGame.java
+
+H:\work\TicTacToe\v2.88>java TicTacToeGame
+
+************************************************
+Let's play Tic Tac Toe!
+When asked for a move, enter location you want.
+Enter the row first and then the column, both on the same line.
+The row and column must in the range 1 .. 3
+************************************************
+
+Here is the current board:
+
+ | |
+-+-+-
+ | |
+-+-+-
+ | |
+
+It is my move.  I am X
+
+The move for X is 3, 1
+Here is the current board:
+
+ | |
+-+-+-
+ | |
+-+-+-
+X| |
+
+It is your move.  You are O
+Enter a row and column on one line: 2 2
+
+The move for O is 2, 2
+Here is the current board:
+
+ | |
+-+-+-
+ |O|
+-+-+-
+X| |
+
+It is my move.  I am X
+
+The move for X is 1, 3
+Here is the current board:
+
+ | |X
+-+-+-
+ |O|
+-+-+-
+X| |
+
+It is your move.  You are O
+Enter a row and column on one line: 1 2
+
+The move for O is 1, 2
+Here is the current board:
+
+ |O|X
+-+-+-
+ |O|
+-+-+-
+X| |
+
+It is my move.  I am X
+
+The move for X is 3, 2
+Here is the current board:
+
+ |O|X
+-+-+-
+ |O|
+-+-+-
+X|X|
+
+It is your move.  You are O
+Enter a row and column on one line: 3 3
+
+The move for O is 3, 3
+Here is the current board:
+
+ |O|X
+-+-+-
+ |O|
+-+-+-
+X|X|O
+
+It is my move.  I am X
+
+The move for X is 1, 1
+Here is the current board:
+
+X|O|X
+-+-+-
+ |O|
+-+-+-
+X|X|O
+
+It is your move.  You are O
+Enter a row and column on one line: 2 1
+
+The move for O is 2, 1
+Here is the current board:
+
+X|O|X
+-+-+-
+O|O|
+-+-+-
+X|X|O
+
+It is my move.  I am X
+
+The move for X is 2, 3
+Here is the current board:
+
+X|O|X
+-+-+-
+O|O|X
+-+-+-
+X|X|O
+
+We tied!
+[(3,1), (2,2), (1,3), (1,2), (3,2), (3,3), (1,1), (2,1), (2,3)]
+
+H:\work\TicTacToe\v2.88>

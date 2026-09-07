@@ -1,0 +1,54 @@
+========== Dining Philosophers Test Results ==========
+[1778654253] Philosopher 0 is thinking
+[1778654253] Philosopher 2 is thinking
+[1778654253] Philosopher 1 is thinking
+[1778654253] Philosopher 3 is thinking
+[1778654253] Philosopher 4 is thinking
+[1778654253] Philosopher 0 is hungry
+[1778654253] Philosopher 0 is eating
+[1778654254] Philosopher 2 is hungry
+[1778654254] Philosopher 2 is eating
+[1778654254] Philosopher 1 is hungry
+[1778654254] Philosopher 0 finished eating, puts down chopsticks
+[1778654254] Philosopher 0 is thinking
+[1778654254] Philosopher 0 is hungry
+[1778654254] Philosopher 0 is eating
+[1778654254] Philosopher 0 finished eating, puts down chopsticks
+[1778654254] Philosopher 0 is thinking
+[1778654254] Philosopher 4 is hungry
+[1778654254] Philosopher 4 is eating
+[1778654254] Philosopher 3 is hungry
+[1778654255] Philosopher 2 finished eating, puts down chopsticks
+[1778654255] Philosopher 2 is thinking
+[1778654255] Philosopher 1 is eating
+[1778654255] Philosopher 0 is hungry
+[1778654255] Philosopher 1 finished eating, puts down chopsticks
+[1778654255] Philosopher 1 is thinking
+[1778654255] Philosopher 4 finished eating, puts down chopsticks
+[1778654255] Philosopher 4 is thinking
+[1778654255] Philosopher 4 is hungry
+[1778654255] Philosopher 4 is eating
+[1778654256] Philosopher 2 is hungry
+[1778654256] Philosopher 4 finished eating, puts down chopsticks
+[1778654256] Philosopher 3 is eating
+[1778654256] Philosopher 0 is eating
+[1778654256] Philosopher 4 is thinking
+[1778654256] Philosopher 3 finished eating, puts down chopsticks
+[1778654256] Philosopher 3 is thinking
+[1778654256] Philosopher 2 is eating
+[1778654256] Philosopher 2 finished eating, puts down chopsticks
+[1778654256] Philosopher 2 is thinking
+[1778654256] Philosopher 1 is hungry
+[1778654257] Philosopher 0 finished eating, puts down chopsticks
+[1778654257] Philosopher 0 is thinking
+[1778654257] Philosopher 1 is eating
+[1778654257] Philosopher 4 is hungry
+[1778654257] Philosopher 2 is hungry
+[1778654257] Philosopher 4 is eating
+[1778654257] Philosopher 0 is hungry
+[1778654257] Philosopher 3 is hungry
+[1778654257] Philosopher 1 finished eating, puts down chopsticks
+[1778654257] Philosopher 1 is thinking
+Received SIGINT, terminating the program...
+Wed May 13 14:37:37 2026
+ CST 2024103975

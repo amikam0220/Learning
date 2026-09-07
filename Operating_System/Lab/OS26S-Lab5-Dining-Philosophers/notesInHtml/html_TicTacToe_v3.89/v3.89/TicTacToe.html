@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#008000">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#008000">A&nbsp;class&nbsp;playing&nbsp;a&nbsp;game&nbsp;of&nbsp;TicTacToe</font><br />
+<font color="#008000">*/</font><br />
+<font color="#ffffff"></font><br />
+<font color="#0000c0"><b>import&nbsp;</b></font><font color="#000000">java.util.Random;</font><br />
+<font color="#0000c0"><b>import&nbsp;</b></font><font color="#000000">java.util.Scanner;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#0000c0"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">TicTacToe&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;player;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;computer;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;person;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Board&nbsp;board;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">TicTacToeAgent&nbsp;agent;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">TicTacToe&nbsp;</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">agentIQ</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">showStartHint</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">randomFirstPlayer</font><font color="#000000">()</font><font color="#000000">;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Board</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">agent&nbsp;=&nbsp;agentCreator</font><font color="#000000">(&nbsp;</font><font color="#000000">agentIQ</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#000000">TicTacToe&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>this</b></font><font color="#000000">(&nbsp;</font><font color="#990000">100</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>public&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">play&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board.show</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#c00000"><b>boolean&nbsp;</b></font><font color="#000000">gameOver&nbsp;=&nbsp;</font><font color="#0000c0"><b>false</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">!gameOver</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;getAMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board.handleMove</font><font color="#000000">(&nbsp;</font><font color="#000000">move,&nbsp;player</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">board.show</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isGameWon</font><font color="#000000">()&nbsp;</font><font color="#000000">||&nbsp;board.isFull</font><font color="#000000">())</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">gameOver&nbsp;=&nbsp;</font><font color="#0000c0"><b>true</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>else&nbsp;</b></font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">player&nbsp;=&nbsp;oppositePlayer</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">showGameResult</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">TicTacToeAgent&nbsp;agentCreator&nbsp;</font><font color="#000000">(</font><font color="#c00000"><b>int&nbsp;</b></font><font color="#000000">iQ</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">TicTacToeAgent&nbsp;agent;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>switch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">iQ</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>case&nbsp;</b></font><font color="#990000">0&nbsp;&nbsp;&nbsp;</font><font color="#000000">:&nbsp;&nbsp;agent&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">RandomAgent</font><font color="#000000">(&nbsp;</font><font color="#000000">board</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#0000c0"><b>break</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>case&nbsp;</b></font><font color="#990000">100&nbsp;</font><font color="#000000">:&nbsp;&nbsp;agent&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">AIAssistance</font><font color="#000000">(&nbsp;</font><font color="#000000">board,&nbsp;computer,&nbsp;person</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#0000c0"><b>break</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>default&nbsp;&nbsp;</b></font><font color="#000000">:&nbsp;&nbsp;agent&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">WisdomAgent</font><font color="#000000">(&nbsp;</font><font color="#000000">board,&nbsp;computer,&nbsp;person,&nbsp;iQ</font><font color="#000000">)</font><font color="#000000">;&nbsp;</font><font color="#0000c0"><b>break</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">agent;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">showStartHint</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#000000">HINT_MESSAGE</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">randomFirstPlayer&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">generator.nextBoolean</font><font color="#000000">())&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">person&nbsp;&nbsp;&nbsp;=&nbsp;Tool.X;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">computer&nbsp;=&nbsp;Tool.O;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>else&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">person&nbsp;&nbsp;&nbsp;=&nbsp;Tool.O;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">computer&nbsp;=&nbsp;Tool.X;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">player&nbsp;=&nbsp;Tool.X;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Tool&nbsp;oppositePlayer&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">(</font><font color="#000000">player&nbsp;==&nbsp;computer</font><font color="#000000">)&nbsp;</font><font color="#000000">?&nbsp;person&nbsp;:&nbsp;computer;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#c00000"><b>void&nbsp;</b></font><font color="#000000">showGameResult&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isGameWon</font><font color="#000000">())</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#000000">player==person&nbsp;?&nbsp;</font><font color="#990000">&#34;You&nbsp;won!&#34;&nbsp;</font><font color="#000000">:&nbsp;</font><font color="#990000">&#34;I&nbsp;won!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>else&nbsp;if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isFull</font><font color="#000000">())</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;We&nbsp;tied!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>else</b></font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Something&nbsp;went&nbsp;wrong!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#000000">board.getMoves</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Creates&nbsp;a&nbsp;move,&nbsp;either&nbsp;a&nbsp;random&nbsp;generated&nbsp;move&nbsp;or&nbsp;as&nbsp;input&nbsp;from&nbsp;the&nbsp;user</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Move&nbsp;getAMove&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">player&nbsp;==&nbsp;computer</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;It&nbsp;is&nbsp;my&nbsp;move.&nbsp;&nbsp;I&nbsp;am&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;player&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">move&nbsp;=&nbsp;agent.nextMove</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>else&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;It&nbsp;is&nbsp;your&nbsp;move.&nbsp;&nbsp;You&nbsp;are&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;player&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">move&nbsp;=&nbsp;getAValidMoveFromPerson</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">move;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;</b></font><font color="#000000">Move&nbsp;getAValidMoveFromPerson&nbsp;</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Move&nbsp;move&nbsp;=&nbsp;</font><font color="#0000c0"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#0000c0"><b>true</b></font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>try&nbsp;</b></font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.print</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Enter&nbsp;a&nbsp;row&nbsp;and&nbsp;column&nbsp;on&nbsp;one&nbsp;line:&nbsp;&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">move&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Move</font><font color="#000000">(&nbsp;</font><font color="#000000">in.nextInt</font><font color="#000000">()</font><font color="#000000">,&nbsp;in.nextInt</font><font color="#000000">()&nbsp;)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#008000">//&nbsp;Generates&nbsp;an&nbsp;exception&nbsp;if&nbsp;can't&nbsp;make&nbsp;a&nbsp;move&nbsp;from&nbsp;r&nbsp;and&nbsp;c</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#0000c0"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">board.isValid</font><font color="#000000">(&nbsp;</font><font color="#000000">move&nbsp;</font><font color="#000000">))&nbsp;</font><font color="#0000c0"><b>return&nbsp;</b></font><font color="#000000">move;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Invalid&nbsp;move.&nbsp;Try&nbsp;again!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}&nbsp;</font><font color="#0000c0"><b>catch&nbsp;</b></font><font color="#000000">(</font><font color="#000000">Exception&nbsp;e</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">System.out.println</font><font color="#000000">(&nbsp;</font><font color="#990000">&#34;Input&nbsp;error.&nbsp;Try&nbsp;again!&#34;&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">Scanner&nbsp;in&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Scanner</font><font color="#000000">(&nbsp;</font><font color="#000000">System.in&nbsp;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;</b></font><font color="#000000">Random&nbsp;generator&nbsp;=&nbsp;</font><font color="#0000c0"><b>new&nbsp;</b></font><font color="#000000">Random</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#0000c0"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">String&nbsp;HINT_MESSAGE&nbsp;=&nbsp;</font><font color="#990000">&#34;\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;************************************************\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;Let's&nbsp;play&nbsp;Tic&nbsp;Tac&nbsp;Toe!\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;When&nbsp;asked&nbsp;for&nbsp;a&nbsp;move,&nbsp;enter&nbsp;location&nbsp;you&nbsp;want.\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;Enter&nbsp;the&nbsp;row&nbsp;first&nbsp;and&nbsp;then&nbsp;the&nbsp;column,&nbsp;both&nbsp;on&nbsp;the&nbsp;same&nbsp;line.\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;The&nbsp;row&nbsp;and&nbsp;column&nbsp;must&nbsp;in&nbsp;the&nbsp;range&nbsp;1&nbsp;..&nbsp;3\n&#34;&nbsp;</font><font color="#000000">+</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#990000">&#34;************************************************\n&#34;&nbsp;</font><font color="#000000">;</font><br />
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>

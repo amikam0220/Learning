@@ -1,0 +1,146 @@
+Here are some commonly used commands in Bourne Shell (Bash/Unix):
+
+1. File & Directory Operations
+•   ls - List directory contents
+
+•   cd - Change directory
+
+•   pwd - Print working directory
+
+•   cp - Copy files/directories
+
+•   mv - Move/rename files/directories
+
+•   rm - Remove files/directories
+
+•   mkdir - Create directory
+
+•   rmdir - Remove empty directory
+
+•   touch - Create empty file/update timestamps
+
+•   cat - Concatenate and display files
+
+•   less/more - Page through file contents
+
+•   head/tail - Show beginning/end of files
+
+•   find - Search for files
+
+•   grep - Search text using patterns
+
+2. Text Processing
+•   echo - Display text
+
+•   awk - Text processing language
+
+•   sed - Stream editor
+
+•   sort - Sort lines
+
+•   uniq - Report/omit repeated lines
+
+•   wc - Word/line/character count
+
+•   cut - Remove sections from lines
+
+•   tr - Translate/delete characters
+
+•   diff - Compare files line by line
+
+3. File Permissions
+•   chmod - Change file permissions
+
+•   chown - Change file owner/group
+
+•   chgrp - Change group ownership
+
+4. System Information
+•   ps - Display process status
+
+•   top/htop - Display processes
+
+•   kill - Terminate processes
+
+•   df - Disk space usage
+
+•   du - Disk usage of files/directories
+
+•   free - Memory usage
+
+•   uname - System information
+
+•   who/w - Show who is logged in
+
+•   history - Command history
+
+5. Networking
+•   ping - Test network connectivity
+
+•   curl/wget - Transfer data from URLs
+
+•   ssh - Secure shell client
+
+•   scp - Secure copy
+
+•   netstat - Network statistics
+
+•   ifconfig/ip - Network interface configuration
+
+6. Compression/Archives
+•   tar - Tape archiver
+
+•   gzip/gunzip - File compression/decompression
+
+•   zip/unzip - ZIP compression
+
+7. Shell Builtins
+•   export - Set environment variables
+
+•   alias - Create command aliases
+
+•   source/. - Execute commands from file
+
+•   exit - Exit the shell
+
+•   type - Display command type
+
+8. Redirection & Pipes
+•   > - Redirect output (overwrite)
+
+•   >> - Redirect output (append)
+
+•   < - Redirect input
+
+•   | - Pipe output to another command
+
+•   2> - Redirect standard error
+
+•   &> - Redirect both stdout and stderr
+
+9. Process Management
+•   & - Run command in background
+
+•   jobs - List background jobs
+
+•   fg/bg - Bring job to foreground/background
+
+•   Ctrl+C - Interrupt/kill foreground job
+
+•   Ctrl+Z - Suspend foreground job
+
+10. File Viewing
+•   file - Determine file type
+
+•   stat - Display file statistics
+
+•   locate/which/whereis - Find command locations
+
+Helpful Tips:
+• Use man [command] to view manual pages
+
+• Use [command] --help for quick help
+
+• Press Tab for auto-completion
+
+• Press Ctrl+R to search command history
