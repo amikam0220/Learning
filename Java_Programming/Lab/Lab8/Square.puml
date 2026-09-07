@@ -1,0 +1,43 @@
+@startuml Square
+package Lab8 {
+    ' 抽象类 GeometricObject
+    abstract class GeometricObject {
+        - String color = "white"
+        - boolean filled
+        - java.util.Date dateCreated
+        + GeometricObject()
+        + GeometricObject(String color, boolean filled)
+        + String getColor()
+        + void setColor(String color)
+        + boolean isFilled()
+        + void setFilled(boolean filled)
+        + java.util.Date getDateCreated()
+        + String toString()
+        {abstract} + double getArea()
+        {abstract} + double getPerimeter()
+    }
+
+    ' 接口 Colorable
+    interface Colorable {
+        + void howToColor()
+    }
+
+    ' 类 Square
+    class Square {
+        - double side
+        + Square()
+        + Square(double side)
+        + void setSide(double side)
+        + double getSide()
+        + void howToColor()
+        + double getArea()
+        + double getPerimeter()
+        + String toString()
+    }
+
+    ' 关系：Square 继承 GeometricObject
+    Square --|> GeometricObject
+    ' 关系：Square 实现 Colorable 接口
+    Square ..|> Colorable
+}
+@enduml

@@ -1,0 +1,35 @@
+@startuml LinearEquation-Class-UML
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor #f9f9f9
+    BorderColor #333333
+    ArrowColor #222222
+}
+
+' LinearEquation
+class LinearEquation {
+    - a : double
+    - b : double
+    - c : double
+    - d : double
+    - e : double
+    - f : double
+
+    + LinearEquation(a: double, b: double, c: double, d: double, e: double, f: double)
+    + getA() : double
+    + getB() : double
+    + getC() : double
+    + getD() : double
+    + getE() : double
+    + getF() : double
+    + isSolvable() : boolean
+    + getX() : double
+    + getY() : double
+}
+
+class LinearEquations {
+    + main(args: String[]) : void
+}
+
+LinearEquations ..> LinearEquation : uses
+@enduml

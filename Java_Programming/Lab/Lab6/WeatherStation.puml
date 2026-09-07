@@ -1,0 +1,27 @@
+@startuml WeatherStation-Class
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor LightCyan
+    BorderColor Black
+    ArrowColor Black
+}
+
+class WeatherStation {
+    - temperature : double
+    - pressure : double
+
+    + WeatherStation()
+    + WeatherStation(temperature: double, pressure: double)
+    + static fromImperial(fahrenheit: double, psi: double): WeatherStation
+
+    + getTemperature() : double
+    + getPressure() : double
+    + getTemperatureFahrenheit() : double
+    + getPressurePSI() : double
+
+    + setTemperature(temperature: double) : void
+    + setPressure(pressure: double) : void
+    + setTemperatureFahrenheit(temperature: double) : void
+    + setPressurePSI(pressure: double) : void
+}
+@enduml

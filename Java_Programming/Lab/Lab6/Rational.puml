@@ -1,0 +1,28 @@
+@startuml Rational-Class
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor LightYellow
+    BorderColor Black
+    ArrowColor Black
+}
+
+class Rational {
+    - numerator : int
+    - denominator : int
+
+    + Rational(numerator: int, denominator: int)
+
+    + getNumerator() : int
+    + getDenominator() : int
+
+    + normalize() : Rational
+    + isWhole() : boolean
+    + isDecimal() : boolean
+
+    + equals(numerator: int, denominator: int) : boolean
+    + equals(r: Rational) : boolean
+
+    + static parseRational(numChars: char[], denChars: char[]) : Rational
+    + static parseRational(s: String) : Rational
+}
+@enduml

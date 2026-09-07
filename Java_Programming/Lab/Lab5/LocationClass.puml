@@ -1,0 +1,24 @@
+@startuml Location-Class-UML
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor LightYellow
+    BorderColor Black
+    ArrowColor Black
+}
+
+class Location {
+    + row : int
+    + column : int
+    + maxValue : double
+
+    + Location()
+    + Location(row: int, column: int)
+}
+
+class TheLocationClass {
+    + main(args: String[]) : void
+    + locateLargest(a: double[][]) : Location
+}
+
+TheLocationClass ..> Location : uses
+@enduml

@@ -1,0 +1,25 @@
+@startuml Rectangle-Class-UML
+' define rectangle class
+class Rectangle {
+    - width : double = 1    
+    - height : double = 1 
+    
+    + Rectangle()           
+    + Rectangle(width: double, height: double) 
+    
+    + setWidth(width: double) : void    
+    + setHeight(height: double) : void  
+    + getWidth() : double               
+    + getHeight() : double              
+    + getArea() : double                
+    + getPerimeter() : double           
+}
+
+' TheRectangleClass
+class TheRectangleClass {
+    + main(args: String[]) : void
+}
+
+' Incidence relation
+TheRectangleClass ..> Rectangle : uses
+@enduml

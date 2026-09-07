@@ -1,0 +1,21 @@
+@startuml Course
+skinparam class {
+    BackgroundColor LightBlue
+    BorderColor Black
+    ArrowColor Black
+}
+skinparam defaultFontName Consolas
+
+class Course {
+    - String courseName
+    - ArrayList<String> students
+    - int numberOfStudents
+
+    + Course(String courseName)
+    + addStudent(String student): void
+    + getStudents(): ArrayList<String>
+    + getNumberOfStudents(): int
+    + getCourseName(): String
+    + dropStudent(String student): void
+}
+@enduml

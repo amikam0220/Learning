@@ -1,0 +1,38 @@
+@startuml RegularPolygon-Class-UML
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor LightBlue
+    BorderColor Black
+    ArrowColor Black
+}
+
+class RegularPolygon {
+    - n : int = 3
+    - side : double = 1
+    - x : double = 0
+    - y : double = 0
+    
+    + RegularPolygon()
+    + RegularPolygon(n: int, side: double)
+    + RegularPolygon(n: int, side: double, x: double, y: double)
+    
+    + getN() : int
+    + getSide() : double
+    + getX() : double
+    + getY() : double
+    
+    + setN(n: int) : void
+    + setSide(side: double) : void
+    + setX(x: double) : void
+    + setY(y: double) : void
+    
+    + getPerimeter() : double
+    + getArea() : double
+}
+
+class NsideRegularPolygon {
+    + main(args: String[]) : void
+}
+
+NsideRegularPolygon ..> RegularPolygon : uses
+@enduml

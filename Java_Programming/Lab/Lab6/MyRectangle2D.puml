@@ -1,0 +1,30 @@
+@startuml MyRectangle2D-UML
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor LightGreen
+    BorderColor Black
+    ArrowColor Black
+}
+skinparam defaultFontName "Microsoft YaHei"
+
+class MyRectangle2D {
+    - x : double
+    - y : double
+    - width : double
+    - height : double
+    
+    + MyRectangle2D()
+    + MyRectangle2D(x: double, y: double, width: double, height: double)
+    
+    + getWidth() : double
+    + getHeight() : double
+    + setWidth(width: double) : void
+    + setHeight(height: double) : void
+    
+    + getArea() : double
+    + getParimeter() : double
+    + contains(x: double, y: double) : boolean
+    + contains(r: MyRectangle2D) : boolean
+    + overlaps(r: MyRectangle2D) : boolean
+}
+@enduml

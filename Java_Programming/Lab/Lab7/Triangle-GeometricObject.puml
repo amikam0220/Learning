@@ -1,0 +1,44 @@
+@startuml Triangle-GeometricObject-UML
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor LightYellow
+    BorderColor Black
+    ArrowColor Black
+}
+skinparam defaultFontName "Microsoft YaHei"
+
+' 父类 GeometricObject
+class GeometricObject {
+    - color: String = "white"
+    - filled: boolean
+    - dateCreated: java.util.Date
+    
+    + GeometricObject()
+    + GeometricObject(color: String, filled: boolean)
+    
+    + getColor(): String
+    + setColor(color: String): void
+    + isFilled(): boolean
+    + setFilled(filled: boolean): void
+    + getDateCreated(): java.util.Date
+    + toString(): String
+}
+
+' 子类 Triangle，继承 GeometricObject
+class Triangle extends GeometricObject {
+    - side1: double = 1.0
+    - side2: double = 1.0
+    - side3: double = 1.0
+    
+    + Triangle()
+    + Triangle(side1: double, side2: double, side3: double)
+    
+    + getSide1(): double
+    + getSide2(): double
+    + getSide3(): double
+    + getArea(): double
+    + getPerimeter(): double
+    + toString(): String
+}
+
+@enduml
